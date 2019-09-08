@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using WhatsApp.WPF.Infrastructure.HotKeyRegister;
 
@@ -12,8 +13,8 @@ namespace WhatsApp.WPF.Presentation.Views
         {
             InitializeComponent();
 
-            ResizeMode = System.Windows.ResizeMode.NoResize;
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            ResizeMode = ResizeMode.NoResize;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
         }
 
@@ -22,8 +23,21 @@ namespace WhatsApp.WPF.Presentation.Views
             hotKeyRegister = new HotKeyRegister(this);
             hotKeyRegister.RegistKey(ModifierKeys.Control | ModifierKeys.Shift, Key.Space, (_, __) =>
             {
-                // todo
+                if (Visibility == Visibility.Collapsed)
+                {
+                    Visibility = Visibility.Visible;
+                    AnswerText.Focus();
+                    return;
+                }
+
+                if (Visibility == Visibility.Visible)
+                {
+                    Visibility = Visibility.Collapsed;
+                    return;
+                }
             });
+
+            AnswerText.Focus();
         }
 
         private void Window_Closed(object sender, EventArgs e)
