@@ -11,6 +11,10 @@ namespace WhatsApp.WPF.Presentation.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            ResizeMode = System.Windows.ResizeMode.NoResize;
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)
