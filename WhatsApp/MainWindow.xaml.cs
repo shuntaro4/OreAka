@@ -22,5 +22,10 @@ namespace WhatsApp
                 // todo
             });
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            hotKeyRegister.UnRegistAllKeys();
+        }
     }
 }
