@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Windows;
 using System.Windows.Input;
 using WhatsApp.WPF.Infrastructure.HotKeyRegister;
 
 namespace WhatsApp.WPF.Presentation.Views
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : WindowEx
     {
         private IHotKeyRegister hotKeyRegister;
 

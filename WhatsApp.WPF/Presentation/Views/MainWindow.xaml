@@ -1,8 +1,9 @@
-﻿<Window
+﻿<views:WindowEx
     x:Class="WhatsApp.WPF.Presentation.Views.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:prism="http://prismlibrary.com/"
+    xmlns:views="clr-namespace:WhatsApp.WPF.Presentation.Views"
     Title="{Binding Title.Value}"
     Width="525"
     Height="350"
@@ -10,4 +11,4 @@
     <Grid>
         <ContentControl prism:RegionManager.RegionName="ContentRegion" />
     </Grid>
-</Window>
+</views:WindowEx>
