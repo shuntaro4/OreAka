@@ -8,6 +8,7 @@
     Title="MainWindow"
     Width="800"
     Height="450"
+    ContentRendered="Window_ContentRendered"
     mc:Ignorable="d">
     <Grid />
 </Window>
