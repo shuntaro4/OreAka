@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using WhatsApp.Infrastructure.HotKeyRegister;
 
-namespace WhatsApp
+namespace WhatsApp.Presentation.Views
 {
     public partial class MainWindow : Window
     {
