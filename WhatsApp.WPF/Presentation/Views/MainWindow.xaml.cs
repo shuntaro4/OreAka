@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using WhatsApp.Infrastructure.HotKeyRegister;
+using WhatsApp.WPF.Infrastructure.HotKeyRegister;
 
-namespace WhatsApp.Presentation.Views
+namespace WhatsApp.WPF.Presentation.Views
 {
     public partial class MainWindow : Window
     {

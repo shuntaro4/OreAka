@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 
-namespace WhatsApp.Infrastructure.HotKeyRegister
+namespace WhatsApp.WPF.Infrastructure.HotKeyRegister
 {
     public class HotKeyRegister : IHotKeyRegister
     {
