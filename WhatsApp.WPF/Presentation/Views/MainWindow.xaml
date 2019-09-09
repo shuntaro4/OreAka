@@ -26,7 +26,10 @@
         </Grid>
 
         <Grid Grid.Column="1" Margin="0,5,5,5">
-            <Button x:Name="SendButton" Grid.Column="1">
+            <Button
+                x:Name="SendButton"
+                Grid.Column="1"
+                Command="{Binding SaveCommand}">
                 <iconPacks:PackIconFontAwesome HorizontalAlignment="Center" Kind="PaperPlaneRegular" />
             </Button>
         </Grid>

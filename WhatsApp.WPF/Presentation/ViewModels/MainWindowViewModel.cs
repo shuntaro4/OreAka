@@ -1,5 +1,8 @@
 ﻿using Prism.Mvvm;
 using Reactive.Bindings;
+using System.Diagnostics;
+using System.Linq;
+using System.Reactive.Linq;
 
 namespace WhatsApp.WPF.Presentation.ViewModels
 {
@@ -9,8 +12,16 @@ namespace WhatsApp.WPF.Presentation.ViewModels
 
         public ReactiveProperty<string> Answer { get; set; } = new ReactiveProperty<string>("");
 
+        public ReactiveCommand SaveCommand { get; }
+
         public MainWindowViewModel()
         {
+            SaveCommand = new[] { Answer }.CombineLatest(x => x.All(y => !string.IsNullOrWhiteSpace(y))).ToReactiveCommand();
+        }
+
+        public void SaveAction()
+        {
+            Trace.WriteLine("Save Action");
         }
     }
 }
