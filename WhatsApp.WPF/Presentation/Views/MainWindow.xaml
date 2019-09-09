@@ -22,7 +22,7 @@
                 x:Name="AnswerText"
                 VerticalContentAlignment="Center"
                 FontSize="16"
-                Text="" />
+                Text="{Binding Answer.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         </Grid>
 
         <Grid Grid.Column="1" Margin="0,5,5,5">
