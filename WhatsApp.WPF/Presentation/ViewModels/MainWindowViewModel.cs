@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using Unity.Attributes;
+using WhatsApp.WPF.ApplicationService;
 
 namespace WhatsApp.WPF.Presentation.ViewModels
 {
@@ -27,6 +28,7 @@ namespace WhatsApp.WPF.Presentation.ViewModels
         public void SaveAction()
         {
             Trace.WriteLine("Save Action");
+            WorkTaskService.RegistWorkTask(Answer.Value);
         }
     }
 }
