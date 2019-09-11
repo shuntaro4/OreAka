@@ -24,7 +24,7 @@ namespace WhatsApp.WPF.Domain
                 }
                 if (i == 1)
                 {
-                    Minutes = TypeParser.ToInt(value);
+                    Minutes = TypeParse.ToInt(value);
                     continue;
                 }
             }

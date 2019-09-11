@@ -1,6 +1,6 @@
 ﻿namespace WhatsApp.WPF.Domain
 {
-    public class TypeParser
+    public class TypeParse
     {
         public static int ToInt(string target)
         {
