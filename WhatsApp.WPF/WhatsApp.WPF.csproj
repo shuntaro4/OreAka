@@ -13,6 +13,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\Repositories\" />
-    <Folder Include="ApplicationService\" />
   </ItemGroup>
 </Project>
