@@ -1,5 +1,6 @@
 ﻿using Prism.Ioc;
 using System.Windows;
+using WhatsApp.WPF.ApplicationService;
 using WhatsApp.WPF.Presentation.Views;
 
 namespace WhatsApp.WPF
@@ -13,7 +14,7 @@ namespace WhatsApp.WPF
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.Register<IWorkTaskService, WorkTaskService>();
         }
     }
 }

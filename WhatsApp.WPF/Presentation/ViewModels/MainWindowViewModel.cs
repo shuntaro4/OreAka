@@ -3,6 +3,7 @@ using Reactive.Bindings;
 using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
+using Unity.Attributes;
 
 namespace WhatsApp.WPF.Presentation.ViewModels
 {
@@ -13,6 +14,9 @@ namespace WhatsApp.WPF.Presentation.ViewModels
         public ReactiveProperty<string> Answer { get; set; } = new ReactiveProperty<string>("");
 
         public ReactiveCommand SaveCommand { get; }
+
+        [Dependency]
+        public IWorkTaskService WorkTaskService { get; set; }
 
         public MainWindowViewModel()
         {
