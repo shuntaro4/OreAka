@@ -12,7 +12,22 @@ namespace WhatsApp.WPF.Domain
 
         public WorkTask(string answer)
         {
-            // todo parse string
+            var chunk = answer.Split(" ");
+
+            for (var i = 0; i < chunk.Length; i++)
+            {
+                var value = chunk[i];
+                if (i == 0)
+                {
+                    Title = value;
+                    continue;
+                }
+                if (i == 1)
+                {
+                    Minutes = TypeParser.ToInt(value);
+                    continue;
+                }
+            }
         }
     }
 }
