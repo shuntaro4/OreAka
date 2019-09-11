@@ -17,6 +17,7 @@ namespace WhatsApp.WPF.Presentation.ViewModels
         public MainWindowViewModel()
         {
             SaveCommand = new[] { Answer }.CombineLatest(x => x.All(y => !string.IsNullOrWhiteSpace(y))).ToReactiveCommand();
+            SaveCommand.Subscribe(SaveAction);
         }
 
         public void SaveAction()
