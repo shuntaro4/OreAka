@@ -4,6 +4,8 @@ namespace WhatsApp.WPF.Domain
 {
     public class WorkTask
     {
+        public Guid Id { get; }
+
         public string Title { get; }
 
         public int Minutes { get; }
@@ -28,6 +30,8 @@ namespace WhatsApp.WPF.Domain
                     continue;
                 }
             }
+
+            Id = Guid.NewGuid();
         }
     }
 }
