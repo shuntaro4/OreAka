@@ -14,6 +14,8 @@ namespace WhatsApp.WPF.Domain
 
         public WorkTask(string answer)
         {
+            // todo : split char is better comma than space.
+
             var chunk = answer.Split(" ");
 
             for (var i = 0; i < chunk.Length; i++)

@@ -9,6 +9,8 @@ namespace WhatsApp.WPF.Infrastructure.Repositories
     {
         public async Task SaveAsync(WorkTask workTask)
         {
+            // todo : when "WhatsApp" foler is not existed, create new folder.
+
             var record = $"{workTask.CreratedAt.ToString("yyyy-MM-dd HH:mm:ss")}, {workTask.Id}, {workTask.Title}, {workTask.Minutes}";
             var outputFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "WhatsApp", "workTask.txt");
 
