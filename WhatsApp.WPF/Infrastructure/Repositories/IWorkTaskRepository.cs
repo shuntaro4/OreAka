@@ -5,6 +5,6 @@ namespace WhatsApp.WPF.Infrastructure.Repositories
 {
     public interface IWorkTaskRepository
     {
-        Task Save(WorkTask workTask);
+        Task SaveAsync(WorkTask workTask);
     }
 }
