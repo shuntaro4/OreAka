@@ -4,6 +4,6 @@ namespace WhatsApp.WPF.ApplicationService
 {
     public interface IWorkTaskService
     {
-        Task<bool> RegistWorkTask(string inputString);
+        Task<bool> RegistWorkTaskAsync(string inputString);
     }
 }

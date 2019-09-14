@@ -1,6 +1,5 @@
 ﻿using Prism.Mvvm;
 using Reactive.Bindings;
-using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using Unity.Attributes;
@@ -25,10 +24,13 @@ namespace WhatsApp.WPF.Presentation.ViewModels
             SaveCommand.Subscribe(SaveAction);
         }
 
-        public void SaveAction()
+        public async void SaveAction()
         {
-            Trace.WriteLine("Save Action");
-            WorkTaskService.RegistWorkTask(Answer.Value);
+            var result = await WorkTaskService.RegistWorkTaskAsync(Answer.Value);
+            if (result)
+            {
+                Answer.Value = string.Empty;
+            }
         }
     }
 }

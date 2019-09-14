@@ -8,7 +8,7 @@ namespace WhatsApp.WPF.ApplicationService
         {
         }
 
-        public async Task<bool> RegistWorkTask(string inputString)
+        public async Task<bool> RegistWorkTaskAsync(string inputString)
         {
             return true;
         }
