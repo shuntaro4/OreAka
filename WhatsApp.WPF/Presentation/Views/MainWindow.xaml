@@ -10,7 +10,8 @@
     Height="80"
     prism:ViewModelLocator.AutoWireViewModel="True"
     Closed="Window_Closed"
-    ContentRendered="Window_ContentRendered">
+    ContentRendered="Window_ContentRendered"
+    IsEnabled="{Binding IsBusy.Value, Converter={StaticResource InverseBooleanConverter}}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />

@@ -11,6 +11,8 @@ namespace WhatsApp.WPF.Presentation.ViewModels
     {
         public ReactiveProperty<string> Title { get; } = new ReactiveProperty<string>("What's App");
 
+        public ReactiveProperty<bool> IsBusy { get; private set; } = new ReactiveProperty<bool>(false);
+
         public ReactiveProperty<string> Answer { get; set; } = new ReactiveProperty<string>("");
 
         public ReactiveCommand SaveCommand { get; }
@@ -26,6 +28,8 @@ namespace WhatsApp.WPF.Presentation.ViewModels
 
         public async void SaveAction()
         {
+            IsBusy.Value = true;
+
             var result = await WorkTaskService.RegistWorkTaskAsync(Answer.Value);
             if (result)
             {
@@ -33,6 +37,8 @@ namespace WhatsApp.WPF.Presentation.ViewModels
             }
 
             // todo : add message.
+
+            IsBusy.Value = false;
         }
     }
 }
