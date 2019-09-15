@@ -10,7 +10,7 @@ namespace WhatsApp.WPF.Infrastructure.Repositories
         {
             var outputFolderPath = AppFolder.CreateOutputFolder();
 
-            var record = $"{workTask.CreratedAt.ToString("yyyy-MM-dd HH:mm:ss")}, {workTask.Id}, {workTask.Title}, {workTask.Minutes}";
+            var record = $"{workTask.CreratedAt.ToString("yyyy-MM-dd HH:mm:ss")}, {workTask.Id}, {workTask.Title}, {workTask.Minutes}\r\n";
             var outputFile = Path.Combine(outputFolderPath, "workTask.txt");
 
             await File.AppendAllTextAsync(outputFile, record);
