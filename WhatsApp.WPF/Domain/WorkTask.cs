@@ -18,7 +18,7 @@ namespace WhatsApp.WPF.Domain
 
             for (var i = 0; i < chunk.Length; i++)
             {
-                var value = chunk[i];
+                var value = chunk[i].Trim();
                 if (i == 0)
                 {
                     Title = value;
