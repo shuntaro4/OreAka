@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Unity.Attributes;
 using WhatsApp.WPF.Domain;
@@ -12,6 +11,9 @@ namespace WhatsApp.WPF.ApplicationService
         [Dependency]
         public IWorkTaskRepository WorkTaskRepository { get; set; }
 
+        [Dependency]
+        public ILogService LogService { get; set; }
+
         public async Task<bool> RegistWorkTaskAsync(string inputString)
         {
             try
@@ -20,8 +22,7 @@ namespace WhatsApp.WPF.ApplicationService
             }
             catch (Exception ex)
             {
-                // todo log 出力
-                Trace.WriteLine(ex.ToString());
+                LogService.Error(ex.ToString());
                 return false;
             }
             return true;
