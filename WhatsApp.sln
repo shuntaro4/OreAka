@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsApp.WPF", "WhatsApp.WPF\WhatsApp.WPF.csproj", "{0F8C7E9D-6C1C-47D2-AA91-6DC04828FB0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatsApp.WPF", "WhatsApp.WPF\WhatsApp.WPF.csproj", "{0F8C7E9D-6C1C-47D2-AA91-6DC04828FB0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsApp.WPF.Test", "WhatsApp.WPF.Test\WhatsApp.WPF.Test.csproj", "{D337CE43-BAB4-4833-9D3E-7CD21BA714FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0F8C7E9D-6C1C-47D2-AA91-6DC04828FB0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F8C7E9D-6C1C-47D2-AA91-6DC04828FB0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F8C7E9D-6C1C-47D2-AA91-6DC04828FB0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D337CE43-BAB4-4833-9D3E-7CD21BA714FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D337CE43-BAB4-4833-9D3E-7CD21BA714FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D337CE43-BAB4-4833-9D3E-7CD21BA714FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D337CE43-BAB4-4833-9D3E-7CD21BA714FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
