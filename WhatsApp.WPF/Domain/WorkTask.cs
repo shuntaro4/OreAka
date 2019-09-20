@@ -14,6 +14,11 @@ namespace WhatsApp.WPF.Domain
 
         public WorkTask(string answer)
         {
+            if (string.IsNullOrWhiteSpace(answer))
+            {
+                throw new ArgumentException("Answer value is null or empty.");
+            }
+
             var chunk = answer.Split(",");
 
             for (var i = 0; i < chunk.Length; i++)
