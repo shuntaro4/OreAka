@@ -37,7 +37,10 @@
                 VerticalAlignment="Center"
                 FontSize="14">
                 <MenuItem Header="File">
-                    <MenuItem Header="Preference..." InputGestureText="Win+," />
+                    <MenuItem
+                        Click="Preference_Click"
+                        Header="Preference..."
+                        InputGestureText="Win+," />
                     <Separator />
                     <MenuItem Header="Exit" />
                 </MenuItem>

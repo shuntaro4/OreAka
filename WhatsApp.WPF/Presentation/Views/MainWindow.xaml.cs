@@ -54,5 +54,11 @@ namespace WhatsApp.WPF.Presentation.Views
         {
             Close();
         }
+
+        private void Preference_Click(object sender, RoutedEventArgs e)
+        {
+            var preferenceWindow = new PreferenceWindow();
+            preferenceWindow.ShowDialog();
+        }
     }
 }
