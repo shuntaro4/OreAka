@@ -115,17 +115,17 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="3*" />
                     </Grid.ColumnDefinitions>
-                    <ComboBox Grid.Column="0" />
+                    <ComboBox Grid.Column="0" ItemsSource="{Binding ModifierKeys1}" />
                     <Label
                         Grid.Column="1"
                         HorizontalAlignment="Center"
                         Content="＋" />
-                    <ComboBox Grid.Column="2" />
+                    <ComboBox Grid.Column="2" ItemsSource="{Binding ModifierKeys2}" />
                     <Label
                         Grid.Column="3"
                         HorizontalAlignment="Center"
                         Content="＋" />
-                    <ComboBox Grid.Column="4" />
+                    <ComboBox Grid.Column="4" ItemsSource="{Binding Keys}" />
                 </Grid>
             </Grid>
         </Grid>
