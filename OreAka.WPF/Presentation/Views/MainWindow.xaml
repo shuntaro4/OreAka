@@ -1,0 +1,97 @@
+﻿<views:WindowEx
+    x:Class="OreAka.WPF.Presentation.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:views="clr-namespace:OreAka.WPF.Presentation.Views"
+    Width="500"
+    Height="80"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Closed="Window_Closed"
+    ContentRendered="Window_ContentRendered"
+    IsEnabled="{Binding IsBusy.Value, Converter={StaticResource InverseBooleanConverter}}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Background="Transparent"
+            MouseLeftButtonDown="DragMove">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Menu
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                FontSize="14">
+                <MenuItem Header="File">
+                    <MenuItem
+                        Click="Preference_Click"
+                        Header="Preferences..."
+                        InputGestureText="Win+," />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </MenuItem>
+                <MenuItem Header="About" />
+            </Menu>
+            <TextBlock
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="14"
+                Foreground="White"
+                Text="{Binding Title.Value}" />
+            <Button
+                Grid.Column="2"
+                Width="24"
+                Height="24"
+                Margin="5,5,5,5"
+                HorizontalAlignment="Right"
+                Background="Transparent"
+                BorderThickness="0"
+                Click="CloseButton_Click"
+                Content="✕"
+                Foreground="White" />
+        </Grid>
+
+        <Grid
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="5,5,5,5">
+            <TextBox
+                x:Name="AnswerText"
+                VerticalContentAlignment="Center"
+                FontSize="16"
+                Text="{Binding Answer.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding SaveCommand}" Gesture="Enter" />
+                </TextBox.InputBindings>
+            </TextBox>
+        </Grid>
+
+        <Grid
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="0,5,5,5">
+            <Button
+                x:Name="SendButton"
+                Grid.Column="1"
+                Command="{Binding SaveCommand}">
+                <iconPacks:PackIconFontAwesome HorizontalAlignment="Center" Kind="PaperPlaneRegular" />
+            </Button>
+        </Grid>
+    </Grid>
+</views:WindowEx>
