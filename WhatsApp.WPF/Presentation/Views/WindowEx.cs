@@ -1,18 +1,14 @@
-﻿using MahApps.Metro.Controls;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
+﻿using System.Windows;
 
 namespace WhatsApp.WPF.Presentation.Views
 {
-    public class WindowEx : MetroWindow
+    public class WindowEx : Window
     {
         public WindowEx()
         {
-            WindowTransitionsEnabled = false;
-            TitleCharacterCasing = CharacterCasing.Normal;
-            GlowBrush = new SolidColorBrush(Colors.Black);
-            BorderThickness = new Thickness(0);
+            WindowStyle = WindowStyle.None;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            AllowsTransparency = true;
         }
     }
 }

@@ -12,10 +12,6 @@ namespace WhatsApp.WPF.Presentation.Views
         public MainWindow()
         {
             InitializeComponent();
-
-            ResizeMode = ResizeMode.NoResize;
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)
@@ -43,6 +39,20 @@ namespace WhatsApp.WPF.Presentation.Views
         private void Window_Closed(object sender, EventArgs e)
         {
             hotKeyRegister.UnRegistAllKeys();
+        }
+
+        private void DragMove(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ButtonState != MouseButtonState.Pressed)
+            {
+                return;
+            }
+            DragMove();
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
