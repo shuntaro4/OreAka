@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace OreAka.WPF.Presentation.ViewModels
 {
-    public class PreferenceWindowViewModel : BindableBase
+    public class PreferencesWindowViewModel : BindableBase
     {
         public ReactiveProperty<string> Title { get; } = new ReactiveProperty<string>("Preference");
 
@@ -20,7 +20,7 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveCollection<Key> Keys { get; }
 
-        public PreferenceWindowViewModel()
+        public PreferencesWindowViewModel()
         {
             DelimiterDefaultCommand = new ReactiveCommand();
             DelimiterDefaultCommand.Subscribe(DelimiterDefaultAction);

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using OreAka.WPF.Infrastructure.HotKeyRegister;
+using System;
 using System.Windows;
 using System.Windows.Input;
-using OreAka.WPF.Infrastructure.HotKeyRegister;
 
 namespace OreAka.WPF.Presentation.Views
 {
@@ -57,8 +57,8 @@ namespace OreAka.WPF.Presentation.Views
 
         private void Preference_Click(object sender, RoutedEventArgs e)
         {
-            var preferenceWindow = new PreferenceWindow();
-            preferenceWindow.ShowDialog();
+            var preferencesWindow = new PreferencesWindow();
+            preferencesWindow.ShowDialog();
         }
     }
 }

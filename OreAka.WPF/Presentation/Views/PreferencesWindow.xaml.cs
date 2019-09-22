@@ -3,9 +3,9 @@ using System.Windows.Input;
 
 namespace OreAka.WPF.Presentation.Views
 {
-    public partial class PreferenceWindow : WindowEx
+    public partial class PreferencesWindow : WindowEx
     {
-        public PreferenceWindow()
+        public PreferencesWindow()
         {
             InitializeComponent();
 
