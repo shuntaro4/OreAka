@@ -18,6 +18,7 @@ namespace OreAka.WPF
             containerRegistry.Register<IWorkTaskService, WorkTaskService>();
             containerRegistry.Register<IWorkTaskRepository, WorkTaskRepository>();
             containerRegistry.Register<ILogService, LogService>();
+            containerRegistry.Register<IJsonSerializer, JsonSerializer>();
         }
     }
 }
