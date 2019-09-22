@@ -1,27 +1,38 @@
-﻿using Prism.Mvvm;
+﻿
+using OreAka.WPF.ApplicationService;
+using Prism.Mvvm;
 using Reactive.Bindings;
 using System.Windows.Input;
+using Unity.Attributes;
 
 namespace OreAka.WPF.Presentation.ViewModels
 {
     public class PreferencesWindowViewModel : BindableBase
     {
+        [Dependency]
+        public IPreferencesService PreferencesService { get; set; }
+
         public ReactiveProperty<string> Title { get; } = new ReactiveProperty<string>("Preference");
 
-        public ReactiveProperty<string> Delimiter { get; } = new ReactiveProperty<string>(",");
+        public ReactiveProperty<string> Delimiter { get; set; } = new ReactiveProperty<string>(",");
+
+        public ReactiveCommand LoadedCommand { get; }
 
         public ReactiveCommand DelimiterDefaultCommand { get; }
 
         public ReactiveCommand SaveCommand { get; }
 
-        public ReactiveCollection<ModifierKeys> ModifierKeys1 { get; }
+        public ReactiveCollection<ModifierKeys> ModifierKeys1 { get; set; }
 
-        public ReactiveCollection<ModifierKeys> ModifierKeys2 { get; }
+        public ReactiveCollection<ModifierKeys> ModifierKeys2 { get; set; }
 
-        public ReactiveCollection<Key> Keys { get; }
+        public ReactiveCollection<Key> Keys { get; set; }
 
         public PreferencesWindowViewModel()
         {
+            LoadedCommand = new ReactiveCommand();
+            LoadedCommand.Subscribe(LoadedAction);
+
             DelimiterDefaultCommand = new ReactiveCommand();
             DelimiterDefaultCommand.Subscribe(DelimiterDefaultAction);
 
@@ -48,6 +59,13 @@ namespace OreAka.WPF.Presentation.ViewModels
             {
                 Key.Space
             };
+        }
+
+        private void LoadedAction()
+        {
+            var preferences = PreferencesService.GetPreferences();
+            Delimiter.Value = preferences.Delimiter;
+            // todo combobox value set.
         }
 
         public void DelimiterDefaultAction()
