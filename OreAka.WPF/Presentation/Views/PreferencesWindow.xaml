@@ -153,7 +153,7 @@
                 <Button
                     Width="80"
                     Margin="5,0,0,0"
-                    Command="{Binding SaveAction}"
+                    Command="{Binding SaveCommand}"
                     Content="Save" />
             </StackPanel>
         </Grid>

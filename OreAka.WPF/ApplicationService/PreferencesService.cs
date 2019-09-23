@@ -1,5 +1,6 @@
 ﻿using OreAka.WPF.Domain;
 using OreAka.WPF.Infrastructure.Repositories;
+using System.Windows.Input;
 using Unity.Attributes;
 
 namespace OreAka.WPF.ApplicationService
@@ -26,6 +27,15 @@ namespace OreAka.WPF.ApplicationService
         public Preferences GetDefaultPreferences()
         {
             return Preferences.GenerateDefault();
+        }
+
+        public void SavePreferences(
+            string delimiter,
+            ModifierKeys showHideModifierKeys, Key showHideKey)
+        {
+            var showHideGlobalShortcut = new GlobalShortcut(showHideModifierKeys, showHideKey);
+            var preferences = new Preferences(delimiter, showHideGlobalShortcut);
+            PreferencesRepository.Save(preferences);
         }
     }
 }

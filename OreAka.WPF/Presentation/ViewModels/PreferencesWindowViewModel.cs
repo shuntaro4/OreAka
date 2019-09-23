@@ -103,7 +103,9 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public void SaveAction()
         {
-            // todo 
+            PreferencesService.SavePreferences(
+                Delimiter.Value,
+                SelectedModifierKey1.Value | SelectedModifierKey2.Value, SelectedKey.Value);
         }
     }
 }
