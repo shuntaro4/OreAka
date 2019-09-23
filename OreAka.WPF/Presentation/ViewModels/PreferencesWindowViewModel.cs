@@ -2,6 +2,7 @@
 using OreAka.WPF.ApplicationService;
 using Prism.Mvvm;
 using Reactive.Bindings;
+using System.Linq;
 using System.Windows.Input;
 using Unity.Attributes;
 
@@ -24,7 +25,11 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveCollection<ModifierKeys> ModifierKeys1 { get; set; }
 
+        public ReactiveProperty<ModifierKeys> SelectedModifierKey1 { get; set; } = new ReactiveProperty<ModifierKeys>(ModifierKeys.None);
+
         public ReactiveCollection<ModifierKeys> ModifierKeys2 { get; set; }
+
+        public ReactiveProperty<ModifierKeys> SelectedModifierKey2 { get; set; } = new ReactiveProperty<ModifierKeys>(ModifierKeys.None);
 
         public ReactiveCollection<Key> Keys { get; set; }
 
@@ -68,7 +73,23 @@ namespace OreAka.WPF.Presentation.ViewModels
         {
             var preferences = PreferencesService.GetPreferences();
             Delimiter.Value = preferences.Delimiter;
-            // todo combobox value set.
+
+            var count = 1;
+            foreach (var modifierKey in ModifierKeys1.Where(x => x != ModifierKeys.None && preferences.ShowHideShortcut.ModifierKeys.HasFlag(x)))
+            {
+                if (count == 1)
+                {
+                    var modifierKeyIndex = ModifierKeys1.IndexOf(modifierKey);
+                    SelectedModifierKey1.Value = modifierKeyIndex < 0 ? ModifierKeys.None : ModifierKeys1[modifierKeyIndex];
+                }
+                if (count == 2)
+                {
+                    var modifierKeyIndex = ModifierKeys2.IndexOf(modifierKey);
+                    SelectedModifierKey2.Value = modifierKeyIndex < 0 ? ModifierKeys.None : ModifierKeys2[modifierKeyIndex];
+                    break;
+                }
+                count++;
+            }
 
             var keyIndex = Keys.IndexOf(preferences.ShowHideShortcut.Key);
             SelectedKey.Value = keyIndex < 0 ? Key.None : Keys[keyIndex];
