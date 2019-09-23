@@ -1,12 +1,17 @@
-﻿using OreAka.WPF.Infrastructure.HotKeyRegister;
+﻿using OreAka.WPF.ApplicationService;
+using OreAka.WPF.Infrastructure.HotKeyRegister;
 using System;
 using System.Windows;
 using System.Windows.Input;
+using Unity.Attributes;
 
 namespace OreAka.WPF.Presentation.Views
 {
     public partial class MainWindow : WindowEx
     {
+        [Dependency]
+        public IPreferencesService PreferencesService { get; set; }
+
         private IHotKeyRegister hotKeyRegister;
 
         public MainWindow()
@@ -16,8 +21,10 @@ namespace OreAka.WPF.Presentation.Views
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
+            var preferences = PreferencesService.GetPreferences();
+
             hotKeyRegister = new HotKeyRegister(this);
-            hotKeyRegister.RegistKey(ModifierKeys.Control | ModifierKeys.Shift, Key.Space, (_, __) =>
+            hotKeyRegister.RegistKey(preferences.ShowHideShortcut.ModifierKeys, preferences.ShowHideShortcut.Key, (_, __) =>
             {
                 if (Visibility == Visibility.Collapsed)
                 {
