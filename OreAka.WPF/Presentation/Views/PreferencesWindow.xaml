@@ -125,7 +125,7 @@
                     </Grid.ColumnDefinitions>
                     <ComboBox
                         Grid.Column="0"
-                        ItemsSource="{Binding ModifierKeys1}"
+                        ItemsSource="{Binding ModifierKey1}"
                         SelectedValue="{Binding SelectedModifierKey1.Value}" />
                     <Label
                         Grid.Column="1"
@@ -133,7 +133,7 @@
                         Content="＋" />
                     <ComboBox
                         Grid.Column="2"
-                        ItemsSource="{Binding ModifierKeys2}"
+                        ItemsSource="{Binding ModifierKey2}"
                         SelectedValue="{Binding SelectedModifierKey2.Value}" />
                     <Label
                         Grid.Column="3"

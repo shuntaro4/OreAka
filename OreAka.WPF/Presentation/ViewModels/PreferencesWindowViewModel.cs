@@ -23,11 +23,11 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveCommand SaveCommand { get; }
 
-        public ReactiveCollection<ModifierKeys> ModifierKeys1 { get; set; }
+        public ReactiveCollection<ModifierKeys> ModifierKey1 { get; set; }
 
         public ReactiveProperty<ModifierKeys> SelectedModifierKey1 { get; set; } = new ReactiveProperty<ModifierKeys>(ModifierKeys.None);
 
-        public ReactiveCollection<ModifierKeys> ModifierKeys2 { get; set; }
+        public ReactiveCollection<ModifierKeys> ModifierKey2 { get; set; }
 
         public ReactiveProperty<ModifierKeys> SelectedModifierKey2 { get; set; } = new ReactiveProperty<ModifierKeys>(ModifierKeys.None);
 
@@ -46,7 +46,7 @@ namespace OreAka.WPF.Presentation.ViewModels
             SaveCommand = new ReactiveCommand();
             SaveCommand.Subscribe(SaveAction);
 
-            ModifierKeys1 = new ReactiveCollection<ModifierKeys>
+            ModifierKey1 = new ReactiveCollection<ModifierKeys>
             {
                 ModifierKeys.None,
                 ModifierKeys.Alt,
@@ -54,7 +54,7 @@ namespace OreAka.WPF.Presentation.ViewModels
                 ModifierKeys.Shift
             };
 
-            ModifierKeys2 = new ReactiveCollection<ModifierKeys>
+            ModifierKey2 = new ReactiveCollection<ModifierKeys>
             {
                 ModifierKeys.None,
                 ModifierKeys.Alt,
@@ -75,17 +75,17 @@ namespace OreAka.WPF.Presentation.ViewModels
             Delimiter.Value = preferences.Delimiter;
 
             var count = 1;
-            foreach (var modifierKey in ModifierKeys1.Where(x => x != ModifierKeys.None && preferences.ShowHideShortcut.ModifierKeys.HasFlag(x)))
+            foreach (var modifierKey in ModifierKey1.Where(x => x != ModifierKeys.None && preferences.ShowHideShortcut.ModifierKeys.HasFlag(x)))
             {
                 if (count == 1)
                 {
-                    var modifierKeyIndex = ModifierKeys1.IndexOf(modifierKey);
-                    SelectedModifierKey1.Value = modifierKeyIndex < 0 ? ModifierKeys.None : ModifierKeys1[modifierKeyIndex];
+                    var modifierKeyIndex = ModifierKey1.IndexOf(modifierKey);
+                    SelectedModifierKey1.Value = modifierKeyIndex < 0 ? ModifierKeys.None : ModifierKey1[modifierKeyIndex];
                 }
                 if (count == 2)
                 {
-                    var modifierKeyIndex = ModifierKeys2.IndexOf(modifierKey);
-                    SelectedModifierKey2.Value = modifierKeyIndex < 0 ? ModifierKeys.None : ModifierKeys2[modifierKeyIndex];
+                    var modifierKeyIndex = ModifierKey2.IndexOf(modifierKey);
+                    SelectedModifierKey2.Value = modifierKeyIndex < 0 ? ModifierKeys.None : ModifierKey2[modifierKeyIndex];
                     break;
                 }
                 count++;
