@@ -97,7 +97,8 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public void DelimiterDefaultAction()
         {
-            Delimiter.Value = ","; // todo
+            var defaultPreferences = PreferencesService.GetDefaultPreferences();
+            Delimiter.Value = defaultPreferences.Delimiter;
         }
 
         public void SaveAction()
