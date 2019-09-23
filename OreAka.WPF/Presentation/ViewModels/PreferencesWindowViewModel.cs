@@ -28,7 +28,7 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveCollection<Key> Keys { get; set; }
 
-        public ReactiveProperty<Key> SelectedKey { get; set; } = new ReactiveProperty<Key>();
+        public ReactiveProperty<Key> SelectedKey { get; set; } = new ReactiveProperty<Key>(Key.None);
 
         public PreferencesWindowViewModel()
         {
