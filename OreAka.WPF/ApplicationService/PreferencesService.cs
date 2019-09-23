@@ -22,5 +22,10 @@ namespace OreAka.WPF.ApplicationService
             var preferences = PreferencesRepository.All();
             return preferences;
         }
+
+        public Preferences GetDefaultPreferences()
+        {
+            return Preferences.GenerateDefault();
+        }
     }
 }
