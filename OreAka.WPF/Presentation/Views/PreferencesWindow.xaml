@@ -133,7 +133,10 @@
                         Grid.Column="3"
                         HorizontalAlignment="Center"
                         Content="＋" />
-                    <ComboBox Grid.Column="4" ItemsSource="{Binding Keys}" />
+                    <ComboBox
+                        Grid.Column="4"
+                        ItemsSource="{Binding Keys}"
+                        SelectedValue="{Binding SelectedKey.Value}" />
                 </Grid>
             </Grid>
         </Grid>

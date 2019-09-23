@@ -28,6 +28,8 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveCollection<Key> Keys { get; set; }
 
+        public ReactiveProperty<Key> SelectedKey { get; set; } = new ReactiveProperty<Key>();
+
         public PreferencesWindowViewModel()
         {
             LoadedCommand = new ReactiveCommand();
@@ -57,6 +59,7 @@ namespace OreAka.WPF.Presentation.ViewModels
 
             Keys = new ReactiveCollection<Key>()
             {
+                Key.None,
                 Key.Space
             };
         }
@@ -66,6 +69,9 @@ namespace OreAka.WPF.Presentation.ViewModels
             var preferences = PreferencesService.GetPreferences();
             Delimiter.Value = preferences.Delimiter;
             // todo combobox value set.
+
+            var keyIndex = Keys.IndexOf(preferences.ShowHideShortcut.Key);
+            SelectedKey.Value = keyIndex < 0 ? Key.None : Keys[keyIndex];
         }
 
         public void DelimiterDefaultAction()
