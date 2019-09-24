@@ -1,6 +1,6 @@
-﻿using System.IO;
+﻿using OreAka.WPF.Domain;
+using System.IO;
 using System.Threading.Tasks;
-using OreAka.WPF.Domain;
 
 namespace OreAka.WPF.Infrastructure.Repositories
 {
