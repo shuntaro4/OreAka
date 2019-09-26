@@ -1,7 +1,9 @@
 ﻿using OreAka.WPF.ApplicationService;
+using OreAka.WPF.Domain;
 using OreAka.WPF.Infrastructure.Repositories;
 using OreAka.WPF.Presentation.Views;
 using Prism.Ioc;
+using System;
 using System.Windows;
 
 namespace OreAka.WPF
@@ -21,6 +23,7 @@ namespace OreAka.WPF
             containerRegistry.Register<IPreferencesRepository, PreferencesRepository>();
             containerRegistry.Register<ILogService, LogService>();
             containerRegistry.Register<IJsonSerializer, JsonSerializer>();
+            containerRegistry.RegisterInstance(typeof(AppFolder), new AppFolder(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)));
         }
     }
 }

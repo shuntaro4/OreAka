@@ -1,11 +1,15 @@
 ﻿using OreAka.WPF.Domain;
 using System.IO;
 using System.Threading.Tasks;
+using Unity.Attributes;
 
 namespace OreAka.WPF.Infrastructure.Repositories
 {
     public class WorkTaskRepository : IWorkTaskRepository
     {
+        [Dependency]
+        public AppFolder AppFolder { get; set; }
+
         public async Task SaveAsync(WorkTask workTask)
         {
             var outputFolderPath = AppFolder.CreateOutputFolder();

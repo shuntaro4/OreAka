@@ -1,15 +1,19 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace OreAka.WPF.Domain
 {
     public class AppFolder
     {
-        public static string CreateOutputFolder()
+        private readonly string outputBaseFolder;
+
+        public AppFolder(string outputBaseFolder)
         {
-            var outputFolderPath = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-                "OreAka");
+            this.outputBaseFolder = outputBaseFolder;
+        }
+
+        public string CreateOutputFolder()
+        {
+            var outputFolderPath = Path.Combine(outputBaseFolder, "OreAka");
 
             if (Directory.Exists(outputFolderPath))
             {
