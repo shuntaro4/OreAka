@@ -13,15 +13,13 @@ namespace OreAka.WPF.Domain
             this.outputBaseFolder = outputBaseFolder;
         }
 
-        public string CreateOutputFolder()
+        public void CreateOutputFolder()
         {
             if (Directory.Exists(OutputFolder))
             {
-                return OutputFolder;
+                return;
             }
-
-            var result = Directory.CreateDirectory(OutputFolder);
-            return result.FullName;
+            Directory.CreateDirectory(OutputFolder);
         }
     }
 }

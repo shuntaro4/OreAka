@@ -12,10 +12,10 @@ namespace OreAka.WPF.Infrastructure.Repositories
 
         public async Task SaveAsync(WorkTask workTask)
         {
-            var outputFolderPath = AppFolder.CreateOutputFolder();
+            AppFolder.CreateOutputFolder();
 
             var record = $"{workTask.CreratedAt.ToString("yyyy-MM-dd HH:mm:ss")}, {workTask.Id}, {workTask.Title}, {workTask.Minutes}\r\n";
-            var outputFile = Path.Combine(outputFolderPath, "workTask.txt");
+            var outputFile = Path.Combine(AppFolder.OutputFolder, "workTask.txt");
 
             await File.AppendAllTextAsync(outputFile, record);
         }
