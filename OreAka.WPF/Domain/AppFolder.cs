@@ -4,6 +4,8 @@ namespace OreAka.WPF.Domain
 {
     public class AppFolder
     {
+        public string OutputFolder => Path.Combine(outputBaseFolder, "OreAka");
+
         private readonly string outputBaseFolder;
 
         public AppFolder(string outputBaseFolder)
@@ -13,14 +15,12 @@ namespace OreAka.WPF.Domain
 
         public string CreateOutputFolder()
         {
-            var outputFolderPath = Path.Combine(outputBaseFolder, "OreAka");
-
-            if (Directory.Exists(outputFolderPath))
+            if (Directory.Exists(OutputFolder))
             {
-                return outputFolderPath;
+                return OutputFolder;
             }
 
-            var result = Directory.CreateDirectory(outputFolderPath);
+            var result = Directory.CreateDirectory(OutputFolder);
             return result.FullName;
         }
     }
