@@ -9,7 +9,19 @@ namespace OreAka.WPF.Infrastructure.Repositories
         [Dependency]
         public IJsonSerializer JsonSerializer { get; set; }
 
-        private readonly string preferencesPath = "preferences.json";
+        private string preferencesPath;
+
+        [InjectionConstructor]
+        public PreferencesRepository()
+        {
+            this.preferencesPath = "preferences.json";
+        }
+
+        public PreferencesRepository(string preferencesPath)
+        {
+            // Used in testing
+            this.preferencesPath = preferencesPath;
+        }
 
         public Preferences All()
         {
