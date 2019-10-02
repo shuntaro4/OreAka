@@ -1,5 +1,7 @@
-﻿using OreAka.WPF.Infrastructure.Repositories;
+﻿using OreAka.WPF.Domain;
+using OreAka.WPF.Infrastructure.Repositories;
 using System.IO;
+using System.Windows.Input;
 using Xunit;
 
 namespace OreAka.WPF.Test.Infrastructure.Repositories
@@ -44,6 +46,32 @@ namespace OreAka.WPF.Test.Infrastructure.Repositories
             };
             var actual = target.Exists();
             Assert.False(actual);
+        }
+
+        [Fact(DisplayName = "正：新規で設定ファイルが生成される")]
+        [Trait("PreferencesRepository", "New")]
+        public void NewTrue1()
+        {
+            var path = "NewTrue1.json";
+
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+
+            var target = new PreferencesRepository(path)
+            {
+                JsonSerializer = jsonSerializer
+            };
+
+            target.New();
+
+            Assert.True(File.Exists(path));
+
+            var actual = target.All();
+            Assert.Equal(1, actual.Version);
+            Assert.Equal(",", actual.Delimiter);
+            Assert.NotStrictEqual(new GlobalShortcut(ModifierKeys.Control | ModifierKeys.Shift, Key.Space), actual.ShowHideShortcut);
         }
     }
 }
