@@ -73,5 +73,33 @@ namespace OreAka.WPF.Test.Infrastructure.Repositories
             Assert.Equal(",", actual.Delimiter);
             Assert.NotStrictEqual(new GlobalShortcut(ModifierKeys.Control | ModifierKeys.Shift, Key.Space), actual.ShowHideShortcut);
         }
+
+        [Fact(DisplayName = "正：設定ファイルが保存される")]
+        [Trait("PreferencesRepository", "Save")]
+        public void SaveTrue1()
+        {
+
+            var path = "SaveTrue1.json";
+
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+
+            var target = new PreferencesRepository(path)
+            {
+                JsonSerializer = jsonSerializer
+            };
+            target.New();
+
+            var preferences = new Preferences(":", new GlobalShortcut(ModifierKeys.Alt, Key.S));
+            target.Save(preferences);
+
+            Assert.True(File.Exists(path));
+            var actual = target.All();
+            Assert.Equal(1, actual.Version);
+            Assert.Equal(":", actual.Delimiter);
+            Assert.NotStrictEqual(new GlobalShortcut(ModifierKeys.Alt, Key.S), actual.ShowHideShortcut);
+        }
     }
 }
