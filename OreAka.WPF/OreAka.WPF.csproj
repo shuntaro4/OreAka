@@ -3,8 +3,21 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
+    <RuntimeIdentifier>win10-x86</RuntimeIdentifier>
+    <PublishSingleFile>true</PublishSingleFile>
     <AssemblyName>OreAka.WPF</AssemblyName>
     <DebugType>full</DebugType>
+    <Version>0.0.1</Version>
+    <PackageId>OreAka</PackageId>
+    <Authors>OreAka</Authors>
+    <Company>Shun Aritomi</Company>
+    <Product>OreAka</Product>
+    <PackageProjectUrl>https://github.com/shuntaro4/OreAka</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/shuntaro4/OreAka</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <Description>Recording work time App.</Description>
+    <PackageReleaseNotes>* OreAka 0.0.1 / 8 Oct 2019
+new : Hello World!!! :)</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0455" />
