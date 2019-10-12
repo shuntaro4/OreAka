@@ -7,7 +7,7 @@
     <PublishSingleFile>true</PublishSingleFile>
     <AssemblyName>OreAka.WPF</AssemblyName>
     <DebugType>full</DebugType>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <PackageId>OreAka</PackageId>
     <Authors>OreAka</Authors>
     <Company>Shun Aritomi</Company>
@@ -16,7 +16,13 @@
     <RepositoryUrl>https://github.com/shuntaro4/OreAka</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <Description>Recording work time App.</Description>
-    <PackageReleaseNotes>* OreAka 0.0.1 / 8 Oct 2019
+    <PackageReleaseNotes>* OreAka v0.0.2 / 13 Oct 2019
+new : add app icon.
+new : add about page.
+improved : show message when preferences save completed.
+improved : add preferences menu shortcut command.
+
+* OreAka v0.0.1 / 8 Oct 2019
 new : Hello World!!! :)</PackageReleaseNotes>
     <ApplicationIcon>oreaka.ico</ApplicationIcon>
   </PropertyGroup>
