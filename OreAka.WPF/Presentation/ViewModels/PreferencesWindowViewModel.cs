@@ -15,7 +15,7 @@ namespace OreAka.WPF.Presentation.ViewModels
         [Dependency]
         public IPreferencesService PreferencesService { get; set; }
 
-        public ReactiveProperty<string> Title { get; } = new ReactiveProperty<string>("Preference");
+        public ReactiveProperty<string> Title { get; } = new ReactiveProperty<string>("OreAka - Preference");
 
         public ReactiveProperty<string> Delimiter { get; set; } = new ReactiveProperty<string>(",");
 

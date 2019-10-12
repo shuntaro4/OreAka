@@ -5,6 +5,7 @@
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:views="clr-namespace:OreAka.WPF.Presentation.Views"
+    Title="{Binding Title.Value}"
     Width="500"
     Height="80"
     prism:ViewModelLocator.AutoWireViewModel="True"

@@ -5,6 +5,7 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:views="clr-namespace:OreAka.WPF.Presentation.Views"
+    Title="{Binding Title.Value}"
     Width="500"
     Height="500"
     prism:ViewModelLocator.AutoWireViewModel="True">
