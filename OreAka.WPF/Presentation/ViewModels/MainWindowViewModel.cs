@@ -26,7 +26,7 @@ namespace OreAka.WPF.Presentation.ViewModels
             SaveCommand.Subscribe(SaveAction);
         }
 
-        public async void SaveAction()
+        private async void SaveAction()
         {
             IsBusy.Value = true;
 
