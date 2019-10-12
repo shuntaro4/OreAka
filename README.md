@@ -1,7 +1,7 @@
 # OreAka
 Recording task time.
 
-![readme](https://user-images.githubusercontent.com/5329895/66704871-0f89b280-ed5b-11e9-8ef9-3c7125be4002.png)
+![image](https://user-images.githubusercontent.com/5329895/66705178-7361aa80-ed5e-11e9-9c30-8fc5e47fcd33.png)
 
 ## Download
 - [oreaka-0.0.2.zip](https://github.com/shuntaro4/OreAka/releases/download/v0.0.2/oreaka-0.0.2.zip)
@@ -17,7 +17,7 @@ Recording task time.
 - Default separator is commas.
 - You can change the separator in the preferences page.
 
-![output](https://user-images.githubusercontent.com/5329895/66704963-fc2b1700-ed5b-11e9-8677-50b792481f9e.gif)
+![output](https://user-images.githubusercontent.com/5329895/66705164-40b7b200-ed5e-11e9-8fb7-0f69492b87eb.gif)
 
 ### Show / Hide app command
 - You can use global shortcut command to show / hide app.
