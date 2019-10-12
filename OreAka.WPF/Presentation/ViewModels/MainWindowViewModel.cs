@@ -1,4 +1,5 @@
 ﻿using OreAka.WPF.ApplicationService;
+using OreAka.WPF.Presentation.Views;
 using Prism.Mvvm;
 using Reactive.Bindings;
 using System.Linq;
@@ -17,6 +18,8 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveCommand SaveCommand { get; }
 
+        public ReactiveCommand ShowPreferencesCommand { get; }
+
         [Dependency]
         public IWorkTaskService WorkTaskService { get; set; }
 
@@ -24,6 +27,9 @@ namespace OreAka.WPF.Presentation.ViewModels
         {
             SaveCommand = new[] { Answer }.CombineLatest(x => x.All(y => !string.IsNullOrWhiteSpace(y))).ToReactiveCommand();
             SaveCommand.Subscribe(SaveAction);
+
+            ShowPreferencesCommand = new ReactiveCommand();
+            ShowPreferencesCommand.Subscribe(ShowPreferencesAction);
         }
 
         private async void SaveAction()
@@ -39,6 +45,12 @@ namespace OreAka.WPF.Presentation.ViewModels
             // todo : add message.
 
             IsBusy.Value = false;
+        }
+
+        private void ShowPreferencesAction()
+        {
+            var preferencesWindow = new PreferencesWindow();
+            preferencesWindow.ShowDialog();
         }
     }
 }
