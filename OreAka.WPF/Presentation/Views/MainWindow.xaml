@@ -53,7 +53,7 @@
                     <Separator />
                     <MenuItem Header="Exit" />
                 </MenuItem>
-                <MenuItem Header="About" />
+                <MenuItem Command="{Binding ShowAboutCommand}" Header="About" />
             </Menu>
             <TextBlock
                 Grid.Column="0"

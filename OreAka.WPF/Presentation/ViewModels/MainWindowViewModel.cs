@@ -20,6 +20,8 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveCommand ShowPreferencesCommand { get; }
 
+        public ReactiveCommand ShowAboutCommand { get; }
+
         [Dependency]
         public IWorkTaskService WorkTaskService { get; set; }
 
@@ -30,6 +32,9 @@ namespace OreAka.WPF.Presentation.ViewModels
 
             ShowPreferencesCommand = new ReactiveCommand();
             ShowPreferencesCommand.Subscribe(ShowPreferencesAction);
+
+            ShowAboutCommand = new ReactiveCommand();
+            ShowAboutCommand.Subscribe(ShowAboutAction);
         }
 
         private async void SaveAction()
@@ -51,6 +56,12 @@ namespace OreAka.WPF.Presentation.ViewModels
         {
             var preferencesWindow = new PreferencesWindow();
             preferencesWindow.ShowDialog();
+        }
+
+        private void ShowAboutAction()
+        {
+            var aboutWindow = new AboutWindow();
+            aboutWindow.ShowDialog();
         }
     }
 }
