@@ -149,6 +149,11 @@
 
         <!--  Footer  -->
         <Grid Grid.Row="2" Margin="20">
+            <TextBlock
+                VerticalAlignment="Center"
+                FontSize="14"
+                Foreground="GreenYellow"
+                Text="{Binding Message.Value}" />
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <Button
                     Width="80"

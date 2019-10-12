@@ -17,6 +17,8 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveProperty<string> Delimiter { get; set; } = new ReactiveProperty<string>(",");
 
+        public ReactiveProperty<string> Message { get; set; } = new ReactiveProperty<string>("");
+
         public ReactiveCommand LoadedCommand { get; }
 
         public ReactiveCommand DelimiterDefaultCommand { get; }
@@ -106,6 +108,8 @@ namespace OreAka.WPF.Presentation.ViewModels
             PreferencesService.SavePreferences(
                 Delimiter.Value,
                 SelectedModifierKey1.Value | SelectedModifierKey2.Value, SelectedKey.Value);
+
+            Message.Value = "Save Completed :)";
         }
     }
 }
