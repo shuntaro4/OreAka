@@ -13,6 +13,7 @@ Recording work time.
 ## Usage
 ### Record work time
 - Enter the work content and time separated by separator, and click the send button.
+- The Record data is stored in `MyDocument\OreAka\workTask.txt`.
 - Default separator is commas.
 - You can change the separator in the preferences page.
 
