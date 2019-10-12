@@ -2,7 +2,9 @@
 using OreAka.WPF.ApplicationService;
 using Prism.Mvvm;
 using Reactive.Bindings;
+using System;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Windows.Input;
 using Unity.Attributes;
 
@@ -95,6 +97,11 @@ namespace OreAka.WPF.Presentation.ViewModels
 
             var keyIndex = Keys.IndexOf(preferences.ShowHideShortcut.Key);
             SelectedKey.Value = keyIndex < 0 ? Key.None : Keys[keyIndex];
+
+            Delimiter.Subscribe(_ => ClearMessage());
+            SelectedModifierKey1.Subscribe(_ => ClearMessage());
+            SelectedModifierKey2.Subscribe(_ => ClearMessage());
+            SelectedKey.Subscribe(_ => ClearMessage());
         }
 
         public void DelimiterDefaultAction()
@@ -110,6 +117,11 @@ namespace OreAka.WPF.Presentation.ViewModels
                 SelectedModifierKey1.Value | SelectedModifierKey2.Value, SelectedKey.Value);
 
             Message.Value = "Save Completed :)";
+        }
+
+        public void ClearMessage()
+        {
+            Message.Value = "";
         }
     }
 }
