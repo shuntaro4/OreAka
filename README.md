@@ -1,5 +1,5 @@
 # OreAka
-Recording work time.
+Recording task time.
 
 ![readme](https://user-images.githubusercontent.com/5329895/66704871-0f89b280-ed5b-11e9-8ef9-3c7125be4002.png)
 
@@ -11,9 +11,9 @@ Recording work time.
 2. Unzip downloaded file, and launch OreAka.exe.
 
 ## Usage
-### Record work time
-- Enter the work content and time separated by separator, and click the send button.
-- The Record data is stored in `MyDocument\OreAka\workTask.txt`.
+### Record task time
+- Enter the task content and time separated by separator, and click the send button.
+- The record data is stored in `MyDocument\OreAka\workTask.txt`.
 - Default separator is commas.
 - You can change the separator in the preferences page.
 
