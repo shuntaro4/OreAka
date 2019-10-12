@@ -61,11 +61,5 @@ namespace OreAka.WPF.Presentation.Views
         {
             Close();
         }
-
-        private void Preference_Click(object sender, RoutedEventArgs e)
-        {
-            var preferencesWindow = new PreferencesWindow();
-            preferencesWindow.ShowDialog();
-        }
     }
 }

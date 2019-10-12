@@ -12,6 +12,14 @@
     Closed="Window_Closed"
     ContentRendered="Window_ContentRendered"
     IsEnabled="{Binding IsBusy.Value, Converter={StaticResource InverseBooleanConverter}}">
+
+    <views:WindowEx.InputBindings>
+        <KeyBinding
+            Key="OemComma"
+            Command="{Binding ShowPreferencesCommand}"
+            Modifiers="Ctrl" />
+    </views:WindowEx.InputBindings>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -39,9 +47,9 @@
                 FontSize="14">
                 <MenuItem Header="File">
                     <MenuItem
-                        Click="Preference_Click"
+                        Command="{Binding ShowPreferencesCommand}"
                         Header="Preferences..."
-                        InputGestureText="Win+," />
+                        InputGestureText="Ctrl+," />
                     <Separator />
                     <MenuItem Header="Exit" />
                 </MenuItem>
