@@ -1,7 +1,9 @@
 ﻿using OreAka.WPF.ApplicationService;
+using OreAka.WPF.Domain;
 using OreAka.WPF.Presentation.Views;
 using Prism.Mvvm;
 using Reactive.Bindings;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using Unity.Attributes;
@@ -22,8 +24,13 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveCommand ShowAboutCommand { get; }
 
+        public ReactiveCommand OpenFolderCommand { get; }
+
         [Dependency]
         public IWorkTaskService WorkTaskService { get; set; }
+
+        [Dependency]
+        public AppFolder AppFolder { get; set; }
 
         public MainWindowViewModel()
         {
@@ -35,6 +42,9 @@ namespace OreAka.WPF.Presentation.ViewModels
 
             ShowAboutCommand = new ReactiveCommand();
             ShowAboutCommand.Subscribe(ShowAboutAction);
+
+            OpenFolderCommand = new ReactiveCommand();
+            OpenFolderCommand.Subscribe(OpenFolderAction);
         }
 
         private async void SaveAction()
@@ -62,6 +72,11 @@ namespace OreAka.WPF.Presentation.ViewModels
         {
             var aboutWindow = new AboutWindow();
             aboutWindow.ShowDialog();
+        }
+
+        private void OpenFolderAction()
+        {
+            Process.Start("EXPLORER.EXE", AppFolder.OutputFolder);
         }
     }
 }
