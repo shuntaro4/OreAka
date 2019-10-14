@@ -24,13 +24,19 @@ namespace OreAka.WPF
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.Register<IWorkTaskService, WorkTaskService>();
+            // ApplicationServices
+            containerRegistry.Register<IAppThemeService, AppThemeService>();
+            containerRegistry.Register<ILogService, LogService>();
             containerRegistry.Register<IPreferencesService, PreferencesService>();
+            containerRegistry.Register<IWorkTaskService, WorkTaskService>();
+
+            // Domain
+            containerRegistry.RegisterInstance(typeof(AppFolder), new AppFolder(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)));
+
+            // Repository
             containerRegistry.Register<IWorkTaskRepository, WorkTaskRepository>();
             containerRegistry.Register<IPreferencesRepository, PreferencesRepository>();
-            containerRegistry.Register<ILogService, LogService>();
             containerRegistry.Register<IJsonSerializer, JsonSerializer>();
-            containerRegistry.RegisterInstance(typeof(AppFolder), new AppFolder(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)));
         }
 
         protected override void OnStartup(StartupEventArgs e)
