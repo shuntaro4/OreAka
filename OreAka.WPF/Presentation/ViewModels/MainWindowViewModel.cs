@@ -26,11 +26,21 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveCommand OpenFolderCommand { get; }
 
+        public ReactiveCommand SwitchThemeCommand { get; }
+
+        public ReactiveCommand LoadedCommand { get; }
+
         [Dependency]
         public IWorkTaskService WorkTaskService { get; set; }
 
         [Dependency]
         public AppFolder AppFolder { get; set; }
+
+        [Dependency]
+        public IAppThemeService AppThemeService { get; set; }
+
+        [Dependency]
+        public IPreferencesService PreferencesService { get; set; }
 
         public MainWindowViewModel()
         {
@@ -45,6 +55,17 @@ namespace OreAka.WPF.Presentation.ViewModels
 
             OpenFolderCommand = new ReactiveCommand();
             OpenFolderCommand.Subscribe(OpenFolderAction);
+
+            SwitchThemeCommand = new ReactiveCommand();
+            SwitchThemeCommand.Subscribe(SwitchThemeAction);
+
+            LoadedCommand = new ReactiveCommand();
+            LoadedCommand.Subscribe(LoadedAction);
+        }
+
+        private void LoadedAction()
+        {
+            AppThemeService.LoadTheme();
         }
 
         private async void SaveAction()
@@ -77,6 +98,12 @@ namespace OreAka.WPF.Presentation.ViewModels
         private void OpenFolderAction()
         {
             Process.Start("EXPLORER.EXE", AppFolder.OutputFolder);
+        }
+
+        private void SwitchThemeAction()
+        {
+            var currentTheme = AppThemeService.SwitchTheme();
+            PreferencesService.SaveTheme(currentTheme.ThemeName);
         }
     }
 }

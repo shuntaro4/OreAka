@@ -2,6 +2,7 @@
     x:Class="OreAka.WPF.Presentation.Views.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:views="clr-namespace:OreAka.WPF.Presentation.Views"
@@ -12,6 +13,12 @@
     Closed="Window_Closed"
     ContentRendered="Window_ContentRendered"
     IsEnabled="{Binding IsBusy.Value, Converter={StaticResource InverseBooleanConverter}}">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
 
     <views:WindowEx.InputBindings>
         <KeyBinding
@@ -71,16 +78,35 @@
                 VerticalAlignment="Center"
                 Content="{Binding Title.Value}"
                 FontSize="14" />
-            <Button
-                Grid.Column="2"
-                Width="24"
-                Height="24"
-                Margin="5,5,5,5"
-                HorizontalAlignment="Right"
-                Background="Transparent"
-                BorderThickness="0"
-                Click="CloseButton_Click"
-                Content="✕" />
+
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Column="0"
+                    Width="28"
+                    Height="28"
+                    Margin="5,5,5,5"
+                    HorizontalAlignment="Right"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="SwichMode_Click"
+                    Command="{Binding SwitchThemeCommand}">
+                    <iconPacks:PackIconMaterial HorizontalAlignment="Center" Kind="ThemeLightDark" />
+                </Button>
+                <Button
+                    Grid.Column="1"
+                    Width="28"
+                    Height="28"
+                    Margin="0,5,5,5"
+                    HorizontalAlignment="Right"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="CloseButton_Click"
+                    Content="✕" />
+            </Grid>
         </Grid>
 
         <Grid

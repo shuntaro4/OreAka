@@ -1,4 +1,5 @@
-﻿using OreAka.WPF.ApplicationService;
+﻿using MahApps.Metro;
+using OreAka.WPF.ApplicationService;
 using OreAka.WPF.Infrastructure.HotKeyRegister;
 using System;
 using System.Windows;
@@ -60,6 +61,12 @@ namespace OreAka.WPF.Presentation.Views
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void SwichMode_Click(object sender, RoutedEventArgs e)
+        {
+            ThemeManager.ChangeTheme(Application.Current, "Dark.Steel");
+            AnswerText.Focus();
         }
     }
 }
