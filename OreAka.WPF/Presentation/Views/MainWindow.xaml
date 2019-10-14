@@ -81,8 +81,7 @@
                 Background="Transparent"
                 BorderThickness="0"
                 Click="CloseButton_Click"
-                Content="✕"
-                Foreground="White" />
+                Content="✕" />
         </Grid>
 
         <Grid
