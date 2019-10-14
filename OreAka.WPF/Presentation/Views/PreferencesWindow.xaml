@@ -66,15 +66,20 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
                 <Label
+                    Grid.Row="0"
                     Grid.Column="0"
                     Margin="0,0,5,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                     Content="Delimiters"
                     FontSize="14" />
-                <Grid Grid.Column="1">
+                <Grid Grid.Row="0" Grid.Column="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="3*" />
@@ -90,6 +95,24 @@
                         HorizontalAlignment="Left"
                         Command="{Binding DelimiterDefaultCommand}"
                         Content="Default" />
+                </Grid>
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="0,0,5,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Theme"
+                    FontSize="14" />
+                <Grid
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="0,5,5,0">
+                    <ComboBox
+                        Grid.Column="0"
+                        ItemsSource="{Binding ThemeNames}"
+                        SelectedValue="{Binding SelectedTheme.Value}" />
                 </Grid>
             </Grid>
 

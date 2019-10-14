@@ -1,5 +1,6 @@
 ﻿
 using OreAka.WPF.ApplicationService;
+using OreAka.WPF.Domain;
 using Prism.Mvvm;
 using Reactive.Bindings;
 using System;
@@ -39,6 +40,10 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveProperty<Key> SelectedKey { get; set; } = new ReactiveProperty<Key>(Key.None);
 
+        public ReactiveCollection<string> ThemeNames { get; set; }
+
+        public ReactiveProperty<string> SelectedTheme { get; set; } = new ReactiveProperty<string>(AppTheme.GenerateDefault().ThemeName);
+
         public PreferencesWindowViewModel()
         {
             LoadedCommand = new ReactiveCommand();
@@ -71,6 +76,12 @@ namespace OreAka.WPF.Presentation.ViewModels
                 Key.None,
                 Key.Space
             };
+
+            ThemeNames = new ReactiveCollection<string>
+            {
+                AppTheme.GenerateDarkTheme().ThemeName,
+                AppTheme.GenerateLightTheme().ThemeName
+            };
         }
 
         private void LoadedAction()
@@ -102,6 +113,9 @@ namespace OreAka.WPF.Presentation.ViewModels
             SelectedModifierKey1.Subscribe(_ => ClearMessage());
             SelectedModifierKey2.Subscribe(_ => ClearMessage());
             SelectedKey.Subscribe(_ => ClearMessage());
+
+            var themeIndex = ThemeNames.IndexOf(preferences.ThemeName);
+            SelectedTheme.Value = themeIndex < 0 ? AppTheme.GenerateDefault().ThemeName : ThemeNames[themeIndex];
         }
 
         public void DelimiterDefaultAction()
@@ -114,7 +128,8 @@ namespace OreAka.WPF.Presentation.ViewModels
         {
             PreferencesService.SavePreferences(
                 Delimiter.Value,
-                SelectedModifierKey1.Value | SelectedModifierKey2.Value, SelectedKey.Value);
+                SelectedModifierKey1.Value | SelectedModifierKey2.Value, SelectedKey.Value,
+                SelectedTheme.Value);
 
             Message.Value = "Save Completed :)";
         }

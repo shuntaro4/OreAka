@@ -17,16 +17,23 @@ namespace OreAka.WPF.Domain
         [DataMember]
         public GlobalShortcut ShowHideShortcut { get; private set; }
 
-        public Preferences(string delimiter, GlobalShortcut showHideShorcut)
+        [DataMember]
+        public string ThemeName { get; private set; }
+
+        public Preferences(string delimiter, GlobalShortcut showHideShorcut, string themeName)
         {
             Version = nowVersion;
             Delimiter = delimiter;
             ShowHideShortcut = showHideShorcut;
+            ThemeName = themeName;
         }
 
         public static Preferences GenerateDefault()
         {
-            var result = new Preferences(",", new GlobalShortcut(ModifierKeys.Control | ModifierKeys.Shift, Key.Space));
+            var result = new Preferences(
+                ",",
+                new GlobalShortcut(ModifierKeys.Control | ModifierKeys.Shift, Key.Space),
+                AppTheme.GenerateDefault().ThemeName);
             return result;
         }
     }

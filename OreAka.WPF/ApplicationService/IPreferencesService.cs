@@ -11,6 +11,7 @@ namespace OreAka.WPF.ApplicationService
 
         void SavePreferences(
             string delimiter,
-            ModifierKeys showHideModifierKeys, Key showHideKey);
+            ModifierKeys showHideModifierKeys, Key showHideKey,
+            string themeName);
     }
 }

@@ -31,10 +31,11 @@ namespace OreAka.WPF.ApplicationService
 
         public void SavePreferences(
             string delimiter,
-            ModifierKeys showHideModifierKeys, Key showHideKey)
+            ModifierKeys showHideModifierKeys, Key showHideKey,
+            string themeName)
         {
             var showHideGlobalShortcut = new GlobalShortcut(showHideModifierKeys, showHideKey);
-            var preferences = new Preferences(delimiter, showHideGlobalShortcut);
+            var preferences = new Preferences(delimiter, showHideGlobalShortcut, themeName);
             PreferencesRepository.Save(preferences);
         }
     }
