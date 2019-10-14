@@ -43,7 +43,7 @@ namespace OreAka.WPF.ApplicationService
         public AppTheme GetCurrentTheme()
         {
             var currentThemeName = PreferencesService?.GetPreferences()?.ThemeName;
-            return AppTheme.GenerateNew(currentThemeName);
+            return AppTheme.GenerateNew(currentThemeName ?? AppTheme.GenerateDefault().ThemeName);
         }
     }
 }
