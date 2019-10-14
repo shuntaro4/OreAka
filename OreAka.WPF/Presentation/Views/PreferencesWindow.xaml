@@ -28,14 +28,13 @@
             Grid.Row="0"
             Background="Transparent"
             MouseLeftButtonDown="DragMove">
-            <TextBlock
+            <Label
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontSize="14"
-                Foreground="White"
-                Text="{Binding Title.Value}" />
+                Content="{Binding Title.Value}"
+                FontSize="14" />
             <Button
                 Grid.Column="0"
                 Width="24"
@@ -106,15 +105,13 @@
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
 
-                <TextBlock
+                <Label
                     Grid.Column="0"
                     Margin="0,0,5,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
-                    FontSize="14"
-                    Foreground="White"
-                    Text="Show / Hide"
-                    TextWrapping="Wrap" />
+                    Content="Show / Hide"
+                    FontSize="14" />
                 <Grid Grid.Column="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*" />

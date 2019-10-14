@@ -64,14 +64,13 @@
                 </MenuItem>
                 <MenuItem Command="{Binding ShowAboutCommand}" Header="About" />
             </Menu>
-            <TextBlock
+            <Label
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontSize="14"
-                Foreground="White"
-                Text="{Binding Title.Value}" />
+                Content="{Binding Title.Value}"
+                FontSize="14" />
             <Button
                 Grid.Column="2"
                 Width="24"
