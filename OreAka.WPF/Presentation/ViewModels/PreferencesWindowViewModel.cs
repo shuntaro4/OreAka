@@ -16,6 +16,9 @@ namespace OreAka.WPF.Presentation.ViewModels
         [Dependency]
         public IPreferencesService PreferencesService { get; set; }
 
+        [Dependency]
+        public IAppThemeService AppThemeService { get; set; }
+
         public ReactiveProperty<string> Title { get; } = new ReactiveProperty<string>("OreAka - Preference");
 
         public ReactiveProperty<string> Delimiter { get; set; } = new ReactiveProperty<string>(",");
@@ -27,6 +30,10 @@ namespace OreAka.WPF.Presentation.ViewModels
         public ReactiveCommand DelimiterDefaultCommand { get; }
 
         public ReactiveCommand SaveCommand { get; }
+
+        public ReactiveCommand SelectionChangedCommand { get; }
+
+        public ReactiveCommand ClosedCommand { get; }
 
         public ReactiveCollection<ModifierKeys> ModifierKey1 { get; set; }
 
@@ -55,6 +62,12 @@ namespace OreAka.WPF.Presentation.ViewModels
             SaveCommand = new ReactiveCommand();
             SaveCommand.Subscribe(SaveAction);
 
+            SelectionChangedCommand = new ReactiveCommand();
+            SelectionChangedCommand.Subscribe(SelectionChangedAction);
+
+            ClosedCommand = new ReactiveCommand();
+            ClosedCommand.Subscribe(ClosedAction);
+
             ModifierKey1 = new ReactiveCollection<ModifierKeys>
             {
                 ModifierKeys.None,
@@ -82,6 +95,16 @@ namespace OreAka.WPF.Presentation.ViewModels
                 AppTheme.GenerateDarkTheme().ThemeName,
                 AppTheme.GenerateLightTheme().ThemeName
             };
+        }
+
+        private void ClosedAction(object obj)
+        {
+            AppThemeService.LoadTheme();
+        }
+
+        private void SelectionChangedAction(object obj)
+        {
+            AppThemeService.ChangeTheme(SelectedTheme.Value);
         }
 
         private void LoadedAction()
@@ -113,6 +136,7 @@ namespace OreAka.WPF.Presentation.ViewModels
             SelectedModifierKey1.Subscribe(_ => ClearMessage());
             SelectedModifierKey2.Subscribe(_ => ClearMessage());
             SelectedKey.Subscribe(_ => ClearMessage());
+            SelectedTheme.Subscribe(_ => ClearMessage());
 
             var themeIndex = ThemeNames.IndexOf(preferences.ThemeName);
             SelectedTheme.Value = themeIndex < 0 ? AppTheme.GenerateDefault().ThemeName : ThemeNames[themeIndex];

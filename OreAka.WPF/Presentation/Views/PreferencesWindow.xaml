@@ -14,6 +14,9 @@
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
         </i:EventTrigger>
+        <i:EventTrigger EventName="Closed">
+            <i:InvokeCommandAction Command="{Binding ClosedCommand}" />
+        </i:EventTrigger>
     </i:Interaction.Triggers>
 
     <Grid>
@@ -112,7 +115,13 @@
                     <ComboBox
                         Grid.Column="0"
                         ItemsSource="{Binding ThemeNames}"
-                        SelectedValue="{Binding SelectedTheme.Value}" />
+                        SelectedValue="{Binding SelectedTheme.Value}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ComboBox>
                 </Grid>
             </Grid>
 
