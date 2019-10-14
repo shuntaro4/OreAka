@@ -38,5 +38,15 @@ namespace OreAka.WPF.ApplicationService
             var preferences = new Preferences(delimiter, showHideGlobalShortcut, themeName);
             PreferencesRepository.Save(preferences);
         }
+
+        public void SaveTheme(string themeName)
+        {
+            var currentPreferences = GetPreferences();
+            var preferences = new Preferences(
+                currentPreferences.Delimiter,
+                currentPreferences.ShowHideShortcut,
+                themeName);
+            PreferencesRepository.Save(preferences);
+        }
     }
 }

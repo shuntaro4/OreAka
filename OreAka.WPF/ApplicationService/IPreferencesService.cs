@@ -13,5 +13,7 @@ namespace OreAka.WPF.ApplicationService
             string delimiter,
             ModifierKeys showHideModifierKeys, Key showHideKey,
             string themeName);
+
+        void SaveTheme(string themeName);
     }
 }
