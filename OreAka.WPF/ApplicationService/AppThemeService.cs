@@ -12,7 +12,8 @@ namespace OreAka.WPF.ApplicationService
 
         public void LoadTheme()
         {
-            var currentThemeName = PreferencesService?.GetPreferences()?.ThemeName;
+            var currentTheme = GetCurrentTheme();
+            var currentThemeName = currentTheme.ThemeName;
             ThemeManager.ChangeTheme(Application.Current, currentThemeName);
         }
 
@@ -23,8 +24,7 @@ namespace OreAka.WPF.ApplicationService
 
         public AppTheme SwitchTheme()
         {
-            var currentThemeName = PreferencesService?.GetPreferences()?.ThemeName;
-            var currentTheme = AppTheme.GenerateNew(currentThemeName);
+            var currentTheme = GetCurrentTheme();
 
             var theme = AppTheme.GenerateDefault();
             if (currentTheme.IsDarkTheme)
@@ -38,6 +38,12 @@ namespace OreAka.WPF.ApplicationService
             ThemeManager.ChangeTheme(Application.Current, theme.ThemeName);
 
             return theme;
+        }
+
+        public AppTheme GetCurrentTheme()
+        {
+            var currentThemeName = PreferencesService?.GetPreferences()?.ThemeName;
+            return AppTheme.GenerateNew(currentThemeName);
         }
     }
 }

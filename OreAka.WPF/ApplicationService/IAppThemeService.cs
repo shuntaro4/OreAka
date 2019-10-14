@@ -9,5 +9,7 @@ namespace OreAka.WPF.ApplicationService
         void ChangeTheme(string themeName);
 
         AppTheme SwitchTheme();
+
+        AppTheme GetCurrentTheme();
     }
 }
