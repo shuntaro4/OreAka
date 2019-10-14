@@ -16,6 +16,11 @@ namespace OreAka.WPF.ApplicationService
             ThemeManager.ChangeTheme(Application.Current, currentThemeName);
         }
 
+        public void ChangeTheme(string themeName)
+        {
+            ThemeManager.ChangeTheme(Application.Current, themeName);
+        }
+
         public AppTheme SwitchTheme()
         {
             var currentThemeName = PreferencesService?.GetPreferences()?.ThemeName;
