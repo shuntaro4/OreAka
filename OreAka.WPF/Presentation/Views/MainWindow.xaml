@@ -18,6 +18,10 @@
             Key="OemComma"
             Command="{Binding ShowPreferencesCommand}"
             Modifiers="Ctrl" />
+        <KeyBinding
+            Key="O"
+            Command="{Binding OpenFolderCommand}"
+            Modifiers="Ctrl" />
     </views:WindowEx.InputBindings>
 
     <Grid>
