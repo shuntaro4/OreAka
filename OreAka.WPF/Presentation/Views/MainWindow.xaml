@@ -51,6 +51,11 @@
                         Header="Preferences..."
                         InputGestureText="Ctrl+," />
                     <Separator />
+                    <MenuItem
+                        Command="{Binding OpenFolderCommand}"
+                        Header="Open Folder..."
+                        InputGestureText="Ctrl+O" />
+                    <Separator />
                     <MenuItem Header="Exit" />
                 </MenuItem>
                 <MenuItem Command="{Binding ShowAboutCommand}" Header="About" />
