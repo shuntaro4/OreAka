@@ -181,7 +181,7 @@
             <TextBlock
                 VerticalAlignment="Center"
                 FontSize="14"
-                Foreground="GreenYellow"
+                Foreground="{Binding MessageColor.Value}"
                 Text="{Binding Message.Value}" />
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <Button

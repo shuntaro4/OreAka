@@ -7,6 +7,7 @@ using System;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Windows.Input;
+using System.Windows.Media;
 using Unity.Attributes;
 
 namespace OreAka.WPF.Presentation.ViewModels
@@ -24,6 +25,8 @@ namespace OreAka.WPF.Presentation.ViewModels
         public ReactiveProperty<string> Delimiter { get; set; } = new ReactiveProperty<string>(",");
 
         public ReactiveProperty<string> Message { get; set; } = new ReactiveProperty<string>("");
+
+        public ReactiveProperty<Brush> MessageColor { get; set; } = new ReactiveProperty<Brush>(Brushes.GreenYellow);
 
         public ReactiveCommand LoadedCommand { get; }
 
@@ -156,6 +159,7 @@ namespace OreAka.WPF.Presentation.ViewModels
                 SelectedTheme.Value);
 
             Message.Value = "Save Completed :)";
+            MessageColor.Value = AppThemeService.GetCurrentTheme().IsDarkTheme ? Brushes.GreenYellow : Brushes.Green;
         }
 
         public void ClearMessage()
