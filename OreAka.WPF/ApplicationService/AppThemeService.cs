@@ -13,7 +13,7 @@ namespace OreAka.WPF.ApplicationService
         public void LoadTheme()
         {
             var currentTheme = GetCurrentTheme();
-            var currentThemeName = currentTheme.ThemeName;
+            var currentThemeName = currentTheme.ThemeName ?? AppTheme.GenerateDefault().ThemeName;
             ThemeManager.ChangeTheme(Application.Current, currentThemeName);
         }
 
