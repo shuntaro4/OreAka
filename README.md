@@ -1,10 +1,10 @@
 # OreAka
 Recording task time.
 
-![image](https://user-images.githubusercontent.com/5329895/66705178-7361aa80-ed5e-11e9-9c30-8fc5e47fcd33.png)
+![oreaka](https://user-images.githubusercontent.com/5329895/66763716-51ddfb80-eee3-11e9-8ad5-c36c7791ed24.png)
 
 ## Download
-- [oreaka-0.0.3.zip](https://github.com/shuntaro4/OreAka/releases/download/v0.0.3/oreaka-0.0.3.zip)
+- [oreaka-0.0.4.zip](https://github.com/shuntaro4/OreAka/releases/download/v0.0.4/oreaka-0.0.4.zip)
 
 ## Quick Start
 1. Download zip file.
@@ -17,9 +17,16 @@ Recording task time.
 - Default separator is commas.
 - You can change the separator in the preferences page.
 
-![output](https://user-images.githubusercontent.com/5329895/66705164-40b7b200-ed5e-11e9-8fb7-0f69492b87eb.gif)
+![send](https://user-images.githubusercontent.com/5329895/66763723-54405580-eee3-11e9-941d-4a2524978825.gif)
 
 ### Show / Hide app command
 - You can use global shortcut command to show / hide app.
 - Default shortcut command is `ctrl` + `shift` + `space`.
 - You can change the shortcut command in the preferences page.
+
+### Switch App Theme
+- You can switch app theme using switch button.
+- Default theme is `Dark.Steel`.
+- You can change app theme in the preferences page, too.
+
+![switchtheme](https://user-images.githubusercontent.com/5329895/66763737-59050980-eee3-11e9-9d5c-27453e2fad69.gif)
