@@ -113,15 +113,17 @@
             Grid.Row="1"
             Grid.Column="0"
             Margin="5,5,5,5">
-            <TextBox
+            <ComboBox
                 x:Name="AnswerText"
                 VerticalContentAlignment="Center"
                 FontSize="16"
+                IsEditable="True"
+                ItemsSource="{Binding Histories}"
                 Text="{Binding Answer.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                <TextBox.InputBindings>
+                <ComboBox.InputBindings>
                     <KeyBinding Command="{Binding SaveCommand}" Gesture="Enter" />
-                </TextBox.InputBindings>
-            </TextBox>
+                </ComboBox.InputBindings>
+            </ComboBox>
         </Grid>
 
         <Grid

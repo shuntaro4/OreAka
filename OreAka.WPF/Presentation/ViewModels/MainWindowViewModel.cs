@@ -18,6 +18,8 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveProperty<string> Answer { get; set; } = new ReactiveProperty<string>("");
 
+        public ReactiveCollection<string> Histories { get; set; }
+
         public ReactiveCommand SaveCommand { get; }
 
         public ReactiveCommand ShowPreferencesCommand { get; }
@@ -61,11 +63,19 @@ namespace OreAka.WPF.Presentation.ViewModels
 
             LoadedCommand = new ReactiveCommand();
             LoadedCommand.Subscribe(LoadedAction);
+
+            Histories = new ReactiveCollection<string>();
         }
 
-        private void LoadedAction()
+        private async void LoadedAction()
         {
             AppThemeService.LoadTheme();
+
+            var histories = await WorkTaskService.GetWorkTaskHistoriesAsync();
+            foreach (var history in histories)
+            {
+                Histories.AddOnScheduler(history);
+            }
         }
 
         private async void SaveAction()
@@ -73,12 +83,12 @@ namespace OreAka.WPF.Presentation.ViewModels
             IsBusy.Value = true;
 
             var result = await WorkTaskService.RegistWorkTaskAsync(Answer.Value);
-            if (result)
+            if (result != null)
             {
                 Answer.Value = string.Empty;
+                Histories.Remove(result.Title);
+                Histories.Insert(0, result.Title);
             }
-
-            // todo : add message.
 
             IsBusy.Value = false;
         }

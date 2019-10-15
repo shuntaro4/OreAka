@@ -1,9 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using OreAka.WPF.Domain;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace OreAka.WPF.ApplicationService
 {
     public interface IWorkTaskService
     {
-        Task<bool> RegistWorkTaskAsync(string inputString);
+        Task<WorkTask> RegistWorkTaskAsync(string inputString);
+
+        Task<IEnumerable<string>> GetWorkTaskHistoriesAsync();
     }
 }

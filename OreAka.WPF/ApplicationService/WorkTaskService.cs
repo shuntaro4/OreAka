@@ -1,8 +1,9 @@
-﻿using System;
+﻿using OreAka.WPF.Domain;
+using OreAka.WPF.Infrastructure.Repositories;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.Attributes;
-using OreAka.WPF.Domain;
-using OreAka.WPF.Infrastructure.Repositories;
 
 namespace OreAka.WPF.ApplicationService
 {
@@ -14,18 +15,32 @@ namespace OreAka.WPF.ApplicationService
         [Dependency]
         public ILogService LogService { get; set; }
 
-        public async Task<bool> RegistWorkTaskAsync(string inputString)
+        public async Task<WorkTask> RegistWorkTaskAsync(string inputString)
         {
             try
             {
-                await WorkTaskRepository.SaveAsync(new WorkTask(inputString));
+                var workTask = new WorkTask(inputString);
+                await WorkTaskRepository.SaveAsync(workTask);
+                return workTask;
             }
             catch (Exception ex)
             {
                 LogService.Error(ex.ToString());
-                return false;
+                return null;
             }
-            return true;
+        }
+
+        public async Task<IEnumerable<string>> GetWorkTaskHistoriesAsync()
+        {
+            try
+            {
+                return await WorkTaskRepository.GetHistoriesAsync();
+            }
+            catch (Exception ex)
+            {
+                LogService.Error(ex.ToString());
+                return new List<string>();
+            }
         }
     }
 }
