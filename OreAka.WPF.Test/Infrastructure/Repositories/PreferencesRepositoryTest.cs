@@ -92,7 +92,7 @@ namespace OreAka.WPF.Test.Infrastructure.Repositories
             };
             target.New();
 
-            var preferences = new Preferences(":", new GlobalShortcut(ModifierKeys.Alt, Key.S));
+            var preferences = new Preferences(":", new GlobalShortcut(ModifierKeys.Alt, Key.S), AppTheme.GenerateDarkTheme().ThemeName);
             target.Save(preferences);
 
             Assert.True(File.Exists(path));
@@ -100,6 +100,7 @@ namespace OreAka.WPF.Test.Infrastructure.Repositories
             Assert.Equal(1, actual.Version);
             Assert.Equal(":", actual.Delimiter);
             Assert.NotStrictEqual(new GlobalShortcut(ModifierKeys.Alt, Key.S), actual.ShowHideShortcut);
+            Assert.Equal("Dark.Steel", actual.ThemeName);
         }
     }
 }
