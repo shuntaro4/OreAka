@@ -13,7 +13,7 @@ namespace OreAka.WPF.Infrastructure.Repositories
         {
             var model = Preferences.GenerateDefault();
             var actual = target.Serialize(model);
-            Assert.Equal(@"{""Delimiter"":"","",""ShowHideShortcut"":{""Key"":18,""ModifierKeys"":6},""Version"":1}", actual);
+            Assert.Equal(@"{""Delimiter"":"","",""ShowHideShortcut"":{""Key"":18,""ModifierKeys"":6},""ThemeName"":""Dark.Steel"",""Version"":1}", actual);
         }
 
         [Fact(DisplayName = "正：objectに正しくデシリアライズできる")]
