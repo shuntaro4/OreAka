@@ -3,7 +3,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
-    <RuntimeIdentifier>win10-x86</RuntimeIdentifier>
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
     <PublishSingleFile>true</PublishSingleFile>
     <AssemblyName>OreAka.WPF</AssemblyName>
     <DebugType>full</DebugType>
