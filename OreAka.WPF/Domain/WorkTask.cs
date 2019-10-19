@@ -21,6 +21,11 @@ namespace OreAka.WPF.Domain
 
             var chunk = answer.Split(",");
 
+            if (chunk.Length != 2)
+            {
+                throw new ArgumentException("Answer format is invalid.");
+            }
+
             for (var i = 0; i < chunk.Length; i++)
             {
                 var value = chunk[i].Trim();
