@@ -26,7 +26,7 @@ namespace OreAka.WPF.ApplicationService
             catch (Exception ex)
             {
                 LogService.Error(ex.ToString());
-                return null;
+                throw ex;
             }
         }
 

@@ -3,8 +3,9 @@ using OreAka.WPF.Domain;
 using OreAka.WPF.Presentation.Views;
 using Prism.Mvvm;
 using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
+using System;
 using System.Diagnostics;
-using System.Linq;
 using System.Reactive.Linq;
 using Unity.Attributes;
 
@@ -46,7 +47,9 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public MainWindowViewModel()
         {
-            SaveCommand = new[] { Answer }.CombineLatest(x => x.All(y => !string.IsNullOrWhiteSpace(y))).ToReactiveCommand();
+            SaveCommand = new[] { Answer.ObserveHasErrors }
+                .CombineLatestValuesAreAllFalse()
+                .ToReactiveCommand();
             SaveCommand.Subscribe(SaveAction);
 
             ShowPreferencesCommand = new ReactiveCommand();
@@ -65,6 +68,20 @@ namespace OreAka.WPF.Presentation.ViewModels
             LoadedCommand.Subscribe(LoadedAction);
 
             Histories = new ReactiveCollection<string>();
+
+            Answer.SetValidateNotifyError(x =>
+            {
+                string errorMessage = null;
+                try
+                {
+                    var workTask = new WorkTask(x);
+                }
+                catch (Exception ex)
+                {
+                    errorMessage = ex.Message;
+                }
+                return errorMessage;
+            });
         }
 
         private async void LoadedAction()
@@ -83,12 +100,9 @@ namespace OreAka.WPF.Presentation.ViewModels
             IsBusy.Value = true;
 
             var result = await WorkTaskService.RegistWorkTaskAsync(Answer.Value);
-            if (result != null)
-            {
-                Answer.Value = string.Empty;
-                Histories.Remove(result.Title);
-                Histories.Insert(0, result.Title);
-            }
+            Answer.Value = string.Empty;
+            Histories.Remove(result.Title);
+            Histories.Insert(0, result.Title);
 
             IsBusy.Value = false;
         }
