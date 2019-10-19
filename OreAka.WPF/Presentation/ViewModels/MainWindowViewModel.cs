@@ -74,7 +74,7 @@ namespace OreAka.WPF.Presentation.ViewModels
                 string errorMessage = null;
                 try
                 {
-                    var workTask = new WorkTask(x);
+                    WorkTask.Validate(x);
                 }
                 catch (Exception ex)
                 {

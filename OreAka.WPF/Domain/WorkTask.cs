@@ -14,21 +14,9 @@ namespace OreAka.WPF.Domain
 
         public WorkTask(string answer)
         {
-            if (string.IsNullOrWhiteSpace(answer))
-            {
-                throw new ArgumentException("Answer value is null or empty.");
-            }
+            Validate(answer);
 
             var chunk = answer.Split(",");
-
-            if (chunk.Length != 2)
-            {
-                throw new ArgumentException("Answer format is invalid.(e.g \"send mail, 90\")");
-            }
-            if (!int.TryParse(chunk[1], out _))
-            {
-                throw new ArgumentException("Answer format is invalid.(e.g \"send mail, 90\")");
-            }
 
             for (var i = 0; i < chunk.Length; i++)
             {
@@ -46,6 +34,25 @@ namespace OreAka.WPF.Domain
             }
 
             Id = Guid.NewGuid();
+        }
+
+        public static void Validate(string answer)
+        {
+            if (string.IsNullOrWhiteSpace(answer))
+            {
+                throw new ArgumentException("Answer value is null or empty.");
+            }
+
+            var chunk = answer.Split(",");
+
+            if (chunk.Length != 2)
+            {
+                throw new ArgumentException("Answer format is invalid.(e.g \"send mail, 90\")");
+            }
+            if (!int.TryParse(chunk[1], out _))
+            {
+                throw new ArgumentException("Answer format is invalid.(e.g \"send mail, 90\")");
+            }
         }
     }
 }
