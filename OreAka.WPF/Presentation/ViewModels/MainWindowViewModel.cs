@@ -17,7 +17,7 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveProperty<bool> IsBusy { get; private set; } = new ReactiveProperty<bool>(false);
 
-        public ReactiveProperty<string> Answer { get; set; } = new ReactiveProperty<string>("");
+        public ReactiveProperty<string> Answer { get; set; } = new ReactiveProperty<string>("", mode: ReactivePropertyMode.Default | ReactivePropertyMode.IgnoreInitialValidationError);
 
         public ReactiveCollection<string> Histories { get; set; }
 
@@ -45,9 +45,11 @@ namespace OreAka.WPF.Presentation.ViewModels
         [Dependency]
         public IPreferencesService PreferencesService { get; set; }
 
+        private ReactiveProperty<bool> initialDisplayed = new ReactiveProperty<bool>(true);
+
         public MainWindowViewModel()
         {
-            SaveCommand = new[] { Answer.ObserveHasErrors }
+            SaveCommand = new[] { initialDisplayed, Answer.ObserveHasErrors }
                 .CombineLatestValuesAreAllFalse()
                 .ToReactiveCommand();
             SaveCommand.Subscribe(SaveAction);
@@ -71,6 +73,7 @@ namespace OreAka.WPF.Presentation.ViewModels
 
             Answer.SetValidateNotifyError(x =>
             {
+                initialDisplayed.Value = false;
                 string errorMessage = null;
                 try
                 {
