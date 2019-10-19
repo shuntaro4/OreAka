@@ -123,6 +123,20 @@
                 <ComboBox.InputBindings>
                     <KeyBinding Command="{Binding SaveCommand}" Gesture="Enter" />
                 </ComboBox.InputBindings>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Polygon
+                                Margin="2,2,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Fill="Red"
+                                Points="0,10 10,0 0,0"
+                                ToolTip="{Binding ElementName=adorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}" />
+                            <AdornedElementPlaceholder x:Name="adorner" />
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
             </ComboBox>
         </Grid>
 
