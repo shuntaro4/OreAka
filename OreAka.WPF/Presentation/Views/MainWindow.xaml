@@ -28,7 +28,7 @@
         <KeyBinding
             Key="O"
             Command="{Binding OpenFolderCommand}"
-            Modifiers="Ctrl" />
+            Modifiers="Ctrl+Shift" />
     </views:WindowEx.InputBindings>
 
     <Grid>
@@ -65,7 +65,7 @@
                     <MenuItem
                         Command="{Binding OpenFolderCommand}"
                         Header="Open Folder..."
-                        InputGestureText="Ctrl+O" />
+                        InputGestureText="Ctrl+Shift+O" />
                     <Separator />
                     <MenuItem Header="Exit" />
                 </MenuItem>
