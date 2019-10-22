@@ -6,6 +6,7 @@ using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Reactive.Linq;
 using Unity.Attributes;
 
@@ -28,6 +29,8 @@ namespace OreAka.WPF.Presentation.ViewModels
         public ReactiveCommand ShowAboutCommand { get; }
 
         public ReactiveCommand OpenFolderCommand { get; }
+
+        public ReactiveCommand OpenFileCommand { get; }
 
         public ReactiveCommand SwitchThemeCommand { get; }
 
@@ -60,6 +63,9 @@ namespace OreAka.WPF.Presentation.ViewModels
 
             OpenFolderCommand = new ReactiveCommand();
             OpenFolderCommand.Subscribe(OpenFolderAction);
+
+            OpenFileCommand = new ReactiveCommand();
+            OpenFileCommand.Subscribe(OpenFileAction);
 
             SwitchThemeCommand = new ReactiveCommand();
             SwitchThemeCommand.Subscribe(SwitchThemeAction);
@@ -122,6 +128,12 @@ namespace OreAka.WPF.Presentation.ViewModels
         private void OpenFolderAction()
         {
             Process.Start("EXPLORER.EXE", AppFolder.OutputFolder);
+        }
+
+        private void OpenFileAction()
+        {
+            var filePath = Path.Combine(AppFolder.OutputFolder, "workTask.txt");
+            Process.Start("NOTEPAD.EXE", filePath);
         }
 
         private void SwitchThemeAction()
