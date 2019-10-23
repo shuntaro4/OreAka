@@ -1,6 +1,7 @@
 ﻿using OreAka.WPF.ApplicationService;
 using OreAka.WPF.Domain;
 using OreAka.WPF.Infrastructure.Repositories;
+using OreAka.WPF.Infrastructure.RunRegister;
 using OreAka.WPF.Presentation.Views;
 using Prism.Ioc;
 using System;
@@ -37,6 +38,7 @@ namespace OreAka.WPF
             containerRegistry.Register<IWorkTaskRepository, WorkTaskRepository>();
             containerRegistry.Register<IPreferencesRepository, PreferencesRepository>();
             containerRegistry.Register<IJsonSerializer, JsonSerializer>();
+            containerRegistry.Register<IRunRegister, RunRegister>();
         }
 
         protected override void OnStartup(StartupEventArgs e)
