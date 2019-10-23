@@ -72,6 +72,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Label
@@ -122,6 +123,21 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ComboBox>
+                </Grid>
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="0,0,5,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Auto Launch"
+                    FontSize="14" />
+                <Grid
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="0,5,5,0">
+                    <CheckBox Grid.Column="0" IsChecked="{Binding AutoLaunch.Value}" />
                 </Grid>
             </Grid>
 

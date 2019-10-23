@@ -142,9 +142,12 @@ namespace OreAka.WPF.Presentation.ViewModels
             SelectedModifierKey2.Subscribe(_ => ClearMessage());
             SelectedKey.Subscribe(_ => ClearMessage());
             SelectedTheme.Subscribe(_ => ClearMessage());
+            AutoLaunch.Subscribe(_ => ClearMessage());
 
             var themeIndex = ThemeNames.IndexOf(preferences.ThemeName);
             SelectedTheme.Value = themeIndex < 0 ? AppTheme.GenerateDefault().ThemeName : ThemeNames[themeIndex];
+
+            AutoLaunch.Value = preferences.AutoLaunch;
         }
 
         public void DelimiterDefaultAction()
