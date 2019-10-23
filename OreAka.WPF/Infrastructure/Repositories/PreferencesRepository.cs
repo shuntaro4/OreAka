@@ -9,6 +9,9 @@ namespace OreAka.WPF.Infrastructure.Repositories
         [Dependency]
         public IJsonSerializer JsonSerializer { get; set; }
 
+        [Dependency]
+        public IRunRegister RunRegister { get; set; }
+
         private string preferencesPath;
 
         [InjectionConstructor]
@@ -55,6 +58,8 @@ namespace OreAka.WPF.Infrastructure.Repositories
             {
                 stream.WriteLine(jsonString);
             }
+
+            RunRegister.RegistKey(preferences.AutoLaunch);
         }
     }
 }
