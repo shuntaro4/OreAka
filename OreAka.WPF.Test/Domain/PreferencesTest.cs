@@ -12,13 +12,14 @@ namespace OreAka.WPF.Test.Domain
         public void PreferencesTrue1()
         {
             var globalShortcut = new GlobalShortcut(System.Windows.Input.ModifierKeys.None, System.Windows.Input.Key.A);
-            var actual = new Preferences(",", globalShortcut, AppTheme.GenerateDefault().ThemeName);
+            var actual = new Preferences(",", globalShortcut, AppTheme.GenerateDefault().ThemeName, true);
 
             Assert.NotNull(actual);
             Assert.Equal(nowVersion, actual.Version);
             Assert.Equal(",", actual.Delimiter);
             Assert.Equal(globalShortcut, actual.ShowHideShortcut);
             Assert.Equal("Dark.Steel", actual.ThemeName);
+            Assert.True(actual.AutoLaunch);
         }
 
 
@@ -34,6 +35,7 @@ namespace OreAka.WPF.Test.Domain
             Assert.Equal(globalShortcut.ModifierKeys, actual.ShowHideShortcut.ModifierKeys);
             Assert.Equal(globalShortcut.Key, actual.ShowHideShortcut.Key);
             Assert.Equal("Dark.Steel", actual.ThemeName);
+            Assert.False(actual.AutoLaunch);
         }
     }
 }

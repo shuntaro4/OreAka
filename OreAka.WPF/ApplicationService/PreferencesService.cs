@@ -32,10 +32,11 @@ namespace OreAka.WPF.ApplicationService
         public void SavePreferences(
             string delimiter,
             ModifierKeys showHideModifierKeys, Key showHideKey,
-            string themeName)
+            string themeName,
+            bool autoLaunch)
         {
             var showHideGlobalShortcut = new GlobalShortcut(showHideModifierKeys, showHideKey);
-            var preferences = new Preferences(delimiter, showHideGlobalShortcut, themeName);
+            var preferences = new Preferences(delimiter, showHideGlobalShortcut, themeName, autoLaunch);
             PreferencesRepository.Save(preferences);
         }
 
@@ -45,7 +46,8 @@ namespace OreAka.WPF.ApplicationService
             var preferences = new Preferences(
                 currentPreferences.Delimiter,
                 currentPreferences.ShowHideShortcut,
-                themeName);
+                themeName,
+                currentPreferences.AutoLaunch);
             PreferencesRepository.Save(preferences);
         }
     }

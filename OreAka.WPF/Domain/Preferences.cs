@@ -20,12 +20,16 @@ namespace OreAka.WPF.Domain
         [DataMember]
         public string ThemeName { get; private set; }
 
-        public Preferences(string delimiter, GlobalShortcut showHideShorcut, string themeName)
+        [DataMember]
+        public bool AutoLaunch { get; private set; }
+
+        public Preferences(string delimiter, GlobalShortcut showHideShorcut, string themeName, bool autoLaunch)
         {
             Version = nowVersion;
             Delimiter = delimiter;
             ShowHideShortcut = showHideShorcut;
             ThemeName = themeName;
+            AutoLaunch = autoLaunch;
         }
 
         public static Preferences GenerateDefault()
@@ -33,7 +37,8 @@ namespace OreAka.WPF.Domain
             var result = new Preferences(
                 ",",
                 new GlobalShortcut(ModifierKeys.Control | ModifierKeys.Shift, Key.Space),
-                AppTheme.GenerateDefault().ThemeName);
+                AppTheme.GenerateDefault().ThemeName,
+                false);
             return result;
         }
     }

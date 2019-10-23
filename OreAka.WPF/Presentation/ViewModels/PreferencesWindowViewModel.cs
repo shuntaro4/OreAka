@@ -54,6 +54,8 @@ namespace OreAka.WPF.Presentation.ViewModels
 
         public ReactiveProperty<string> SelectedTheme { get; set; } = new ReactiveProperty<string>(AppTheme.GenerateDefault().ThemeName);
 
+        public ReactiveProperty<bool> AutoLaunch { get; set; } = new ReactiveProperty<bool>(false);
+
         public PreferencesWindowViewModel()
         {
             LoadedCommand = new ReactiveCommand();
@@ -156,7 +158,8 @@ namespace OreAka.WPF.Presentation.ViewModels
             PreferencesService.SavePreferences(
                 Delimiter.Value,
                 SelectedModifierKey1.Value | SelectedModifierKey2.Value, SelectedKey.Value,
-                SelectedTheme.Value);
+                SelectedTheme.Value,
+                AutoLaunch.Value);
 
             Message.Value = "Save Completed :)";
             MessageColor.Value = AppThemeService.GetCurrentTheme().IsDarkTheme ? Brushes.GreenYellow : Brushes.Green;
