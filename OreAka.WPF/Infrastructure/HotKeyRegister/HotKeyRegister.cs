@@ -10,6 +10,8 @@ namespace OreAka.WPF.Infrastructure.HotKeyRegister
 {
     public class HotKeyRegister : IHotKeyRegister
     {
+        public static HotKeyRegister Instance { get; private set; }
+
         private IntPtr hWnd;
 
         private Dictionary<int, HotKeyItem> hotKeys = new Dictionary<int, HotKeyItem>();
@@ -26,7 +28,12 @@ namespace OreAka.WPF.Infrastructure.HotKeyRegister
         [DllImport("user32.dll")]
         private static extern int UnregisterHotKey(IntPtr hWnd, int id);
 
-        public HotKeyRegister(Window window)
+        public static void GenerateInstance(Window window)
+        {
+            Instance = new HotKeyRegister(window);
+        }
+
+        private HotKeyRegister(Window window)
         {
             var host = new WindowInteropHelper(window);
             hWnd = host.Handle;
