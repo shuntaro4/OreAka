@@ -65,7 +65,6 @@ namespace OreAka.WPF.Presentation.Views
 
         private void SwichMode_Click(object sender, RoutedEventArgs e)
         {
-            ThemeManager.ChangeTheme(Application.Current, "Dark.Steel");
             AnswerText.Focus();
         }
     }
