@@ -1,4 +1,5 @@
 ﻿using OreAka.WPF.Domain;
+using OreAka.WPF.Infrastructure.RunRegister;
 using System.IO;
 using Unity.Attributes;
 
@@ -60,6 +61,8 @@ namespace OreAka.WPF.Infrastructure.Repositories
             }
 
             RunRegister.RegistKey(preferences.AutoLaunch);
+
+            HotKeyRegister.HotKeyRegister.Instance.UpdateFirstKey(preferences.ShowHideShortcut.ModifierKeys, preferences.ShowHideShortcut.Key);
         }
     }
 }
