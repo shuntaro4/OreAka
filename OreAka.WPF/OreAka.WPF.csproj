@@ -7,7 +7,7 @@
     <PublishSingleFile>true</PublishSingleFile>
     <AssemblyName>OreAka.WPF</AssemblyName>
     <DebugType>full</DebugType>
-    <Version>0.0.5</Version>
+    <Version>0.0.6</Version>
     <PackageId>OreAka</PackageId>
     <Authors>OreAka</Authors>
     <Company>Shun Aritomi</Company>
@@ -16,7 +16,12 @@
     <RepositoryUrl>https://github.com/shuntaro4/OreAka</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <Description>Recording task time.</Description>
-    <PackageReleaseNotes>* OreAka v0.0.5 / 15 Oct 2019
+    <PackageReleaseNotes>* OreAka v0.0.6 / 30 Oct 2019
+new : Add the input area validation.
+new : Add the shortcut key to open record file. 
+new : Add auto launch setting.
+
+* OreAka v0.0.5 / 15 Oct 2019
 new : Show task history in the input area.
 
 * OreAka v0.0.4 / 14 Oct 2019
