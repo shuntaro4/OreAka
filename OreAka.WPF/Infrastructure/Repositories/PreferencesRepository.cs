@@ -62,7 +62,7 @@ namespace OreAka.WPF.Infrastructure.Repositories
 
             RunRegister.RegistKey(preferences.AutoLaunch);
 
-            HotKeyRegister.HotKeyRegister.Instance.UpdateFirstKey(preferences.ShowHideShortcut.ModifierKeys, preferences.ShowHideShortcut.Key);
+            // todo update hotkey settings... :(
         }
     }
 }
