@@ -14,22 +14,24 @@ namespace OreAka.WPF.Presentation.Views
 
         public static MainWindow CurrentWindow { get; private set; }
 
+        public IHotKeyRegister HotKeyRegister { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
             CurrentWindow = this;
+            HotKeyRegister = new HotKeyRegister(this);
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-            HotKeyRegister.GenerateInstance(this);
             RegistHotKey();
             AnswerText.Focus();
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            HotKeyRegister.Instance.UnRegistAllKeys();
+            HotKeyRegister.UnRegistAllKeys();
         }
 
         private void DragMove(object sender, MouseButtonEventArgs e)
@@ -53,10 +55,10 @@ namespace OreAka.WPF.Presentation.Views
 
         private void RegistHotKey()
         {
-            HotKeyRegister.Instance.UnRegistAllKeys();
+            HotKeyRegister.UnRegistAllKeys();
 
             var preferences = PreferencesService.GetPreferences();
-            HotKeyRegister.Instance.RegistKey(preferences.ShowHideShortcut.ModifierKeys, preferences.ShowHideShortcut.Key, (_, __) =>
+            HotKeyRegister.RegistKey(preferences.ShowHideShortcut.ModifierKeys, preferences.ShowHideShortcut.Key, (_, __) =>
             {
                 if (Visibility == Visibility.Collapsed)
                 {
