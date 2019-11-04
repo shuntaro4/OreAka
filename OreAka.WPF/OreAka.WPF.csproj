@@ -6,7 +6,7 @@
     <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
     <PublishSingleFile>true</PublishSingleFile>
     <AssemblyName>OreAka</AssemblyName>
-    <DebugType>full</DebugType>
+    <DebugType>none</DebugType>
     <Version>0.0.8</Version>
     <PackageId>OreAka</PackageId>
     <Authors>OreAka</Authors>
