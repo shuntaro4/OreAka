@@ -7,7 +7,7 @@
     <PublishSingleFile>true</PublishSingleFile>
     <AssemblyName>OreAka</AssemblyName>
     <DebugType>full</DebugType>
-    <Version>0.0.7</Version>
+    <Version>0.0.8</Version>
     <PackageId>OreAka</PackageId>
     <Authors>OreAka</Authors>
     <Company>Shun Aritomi</Company>
