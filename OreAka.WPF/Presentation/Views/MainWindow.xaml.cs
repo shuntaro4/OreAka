@@ -12,9 +12,12 @@ namespace OreAka.WPF.Presentation.Views
         [Dependency]
         public IPreferencesService PreferencesService { get; set; }
 
+        public static MainWindow CurrentWindow { get; private set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            CurrentWindow = this;
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)
