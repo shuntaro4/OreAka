@@ -3,8 +3,8 @@ Recording task time.
 
 ![oreaka](https://user-images.githubusercontent.com/5329895/66763716-51ddfb80-eee3-11e9-8ad5-c36c7791ed24.png)
 
-## Download
-- [oreaka-0.0.5.zip](https://github.com/shuntaro4/OreAka/releases/download/v0.0.5/oreaka-0.0.5.zip)
+## Download Page
+- [https://install.appcenter.ms/users/shuntaro4/apps/oreaka/distribution_groups/oreaka](https://install.appcenter.ms/users/shuntaro4/apps/oreaka/distribution_groups/oreaka)
 
 ## Quick Start
 1. Download zip file.
