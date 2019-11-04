@@ -5,9 +5,9 @@
     <UseWPF>true</UseWPF>
     <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
     <PublishSingleFile>true</PublishSingleFile>
-    <AssemblyName>OreAka.WPF</AssemblyName>
+    <AssemblyName>OreAka</AssemblyName>
     <DebugType>full</DebugType>
-    <Version>0.0.6</Version>
+    <Version>0.0.7</Version>
     <PackageId>OreAka</PackageId>
     <Authors>OreAka</Authors>
     <Company>Shun Aritomi</Company>
@@ -16,29 +16,7 @@
     <RepositoryUrl>https://github.com/shuntaro4/OreAka</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <Description>Recording task time.</Description>
-    <PackageReleaseNotes>* OreAka v0.0.6 / 30 Oct 2019
-new : Add the input area validation.
-new : Add the shortcut key to open record file. 
-new : Add auto launch setting.
-
-* OreAka v0.0.5 / 15 Oct 2019
-new : Show task history in the input area.
-
-* OreAka v0.0.4 / 14 Oct 2019
-fix : Fixed a bug that crashes when starting the app.
-
-* OreAka v0.0.3 / 14 Oct 2019
-new : added command to open folder.
-new : added theme switching.
-
-* OreAka v0.0.2 / 13 Oct 2019
-new : add app icon.
-new : add about page.
-improved : show message when preferences save completed.
-improved : add preferences menu shortcut command.
-
-* OreAka v0.0.1 / 8 Oct 2019
-new : Hello World!!! :)</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <ApplicationIcon>oreaka.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>

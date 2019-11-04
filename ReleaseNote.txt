@@ -1,0 +1,26 @@
+* OreAka v0.0.7 / 5 Nov 2019
+fix : Fixed a bug that can't save global hotkey.
+
+* OreAka v0.0.6 / 30 Oct 2019
+new : Add the input area validation.
+new : Add the shortcut key to open record file. 
+new : Add auto launch setting.
+
+* OreAka v0.0.5 / 15 Oct 2019
+new : Show task history in the input area.
+
+* OreAka v0.0.4 / 14 Oct 2019
+fix : Fixed a bug that crashes when starting the app.
+
+* OreAka v0.0.3 / 14 Oct 2019
+new : added command to open folder.
+new : added theme switching.
+
+* OreAka v0.0.2 / 13 Oct 2019
+new : add app icon.
+new : add about page.
+improved : show message when preferences save completed.
+improved : add preferences menu shortcut command.
+
+* OreAka v0.0.1 / 8 Oct 2019
+new : Hello World!!! :)

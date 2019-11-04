@@ -224,20 +224,23 @@ var assemblies = [
   {
     "name": "OreAka.WPF",
     "classes": [
-      { "name": "OreAka.WPF.App", "rp": "OreAka.WPF_App.htm", "cl": 0, "ucl": 18, "cal": 18, "tl": 134, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.App", "rp": "OreAka.WPF_App.htm", "cl": 0, "ucl": 39, "cal": 39, "tl": 172, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 6, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.ApplicationService.AppThemeService", "rp": "OreAka.WPF_AppThemeService.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 49, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 12, "lch": [], "bch": [], "hc": [] },
       { "name": "OreAka.WPF.ApplicationService.LogService", "rp": "OreAka.WPF_LogService.htm", "cl": 0, "ucl": 7, "cal": 7, "tl": 20, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "OreAka.WPF.ApplicationService.PreferencesService", "rp": "OreAka.WPF_PreferencesService.htm", "cl": 0, "ucl": 18, "cal": 18, "tl": 41, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
-      { "name": "OreAka.WPF.ApplicationService.WorkTaskService", "rp": "OreAka.WPF_WorkTaskService.htm", "cl": 0, "ucl": 10, "cal": 10, "tl": 31, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 4, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.ApplicationService.PreferencesService", "rp": "OreAka.WPF_PreferencesService.htm", "cl": 0, "ucl": 27, "cal": 27, "tl": 54, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.ApplicationService.WorkTaskService", "rp": "OreAka.WPF_WorkTaskService.htm", "cl": 0, "ucl": 18, "cal": 18, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 8, "lch": [], "bch": [], "hc": [] },
       { "name": "OreAka.WPF.Domain.AppFolder", "rp": "OreAka.WPF_AppFolder.htm", "cl": 11, "ucl": 0, "cal": 11, "tl": 25, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 2, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.Domain.AppTheme", "rp": "OreAka.WPF_AppTheme.htm", "cl": 21, "ucl": 0, "cal": 21, "tl": 40, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "OreAka.WPF.Domain.GlobalShortcut", "rp": "OreAka.WPF_GlobalShortcut.htm", "cl": 7, "ucl": 0, "cal": 7, "tl": 21, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "OreAka.WPF.Domain.Preferences", "rp": "OreAka.WPF_Preferences.htm", "cl": 14, "ucl": 0, "cal": 14, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.Domain.Preferences", "rp": "OreAka.WPF_Preferences.htm", "cl": 22, "ucl": 0, "cal": 22, "tl": 45, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "OreAka.WPF.Domain.TypeParse", "rp": "OreAka.WPF_TypeParse.htm", "cl": 6, "ucl": 0, "cal": 6, "tl": 14, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 2, "lch": [], "bch": [], "hc": [] },
-      { "name": "OreAka.WPF.Domain.WorkTask", "rp": "OreAka.WPF_WorkTask.htm", "cl": 23, "ucl": 1, "cal": 24, "tl": 42, "ct": "LineCoverage", "mc": "-", "cb": 7, "tb": 8, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.Domain.WorkTask", "rp": "OreAka.WPF_WorkTask.htm", "cl": 33, "ucl": 1, "cal": 34, "tl": 58, "ct": "LineCoverage", "mc": "-", "cb": 11, "tb": 12, "lch": [], "bch": [], "hc": [] },
       { "name": "OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyItem", "rp": "OreAka.WPF_HotKeyItem.htm", "cl": 0, "ucl": 9, "cal": 9, "tl": 21, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister", "rp": "OreAka.WPF_HotKeyRegister.htm", "cl": 0, "ucl": 47, "cal": 47, "tl": 99, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 12, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister", "rp": "OreAka.WPF_HotKeyRegister.htm", "cl": 0, "ucl": 60, "cal": 60, "tl": 123, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 14, "lch": [], "bch": [], "hc": [] },
       { "name": "OreAka.WPF.Infrastructure.Repositories.JsonSerializer", "rp": "OreAka.WPF_JsonSerializer.htm", "cl": 13, "ucl": 0, "cal": 13, "tl": 28, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "OreAka.WPF.Infrastructure.Repositories.PreferencesRepository", "rp": "OreAka.WPF_PreferencesRepository.htm", "cl": 30, "ucl": 4, "cal": 34, "tl": 60, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "OreAka.WPF.Infrastructure.Repositories.WorkTaskRepository", "rp": "OreAka.WPF_WorkTaskRepository.htm", "cl": 7, "ucl": 0, "cal": 7, "tl": 23, "ct": "LineCoverage", "mc": "-", "cb": 1, "tb": 2, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.Infrastructure.Repositories.PreferencesRepository", "rp": "OreAka.WPF_PreferencesRepository.htm", "cl": 32, "ucl": 4, "cal": 36, "tl": 68, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.Infrastructure.Repositories.WorkTaskRepository", "rp": "OreAka.WPF_WorkTaskRepository.htm", "cl": 7, "ucl": 13, "cal": 20, "tl": 42, "ct": "LineCoverage", "mc": "-", "cb": 1, "tb": 8, "lch": [], "bch": [], "hc": [] },
+      { "name": "OreAka.WPF.Infrastructure.RunRegister.RunRegister", "rp": "OreAka.WPF_RunRegister.htm", "cl": 0, "ucl": 26, "cal": 26, "tl": 48, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 2, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "xunit.assert",
@@ -275,17 +278,38 @@ var riskHotspotMetrics = [
 
 var riskHotspots = [
   {
-    "assembly": "OreAka.WPF", "class": "OreAka.WPF.ApplicationService.WorkTaskService", "reportPath": "OreAka.WPF_WorkTaskService.htm", "methodName": "RegistWorkTaskAsync()", "methodShortName": "RegistWorkTaskAsync()", "fileIndex": 0, "line": 18,
+    "assembly": "OreAka.WPF", "class": "OreAka.WPF.ApplicationService.AppThemeService", "reportPath": "OreAka.WPF_AppThemeService.htm", "methodName": "OreAka.WPF.Domain.AppTheme OreAka.WPF.ApplicationService.AppThemeService::GetCurrentTheme()", "methodShortName": "GetCurrentTheme()", "fileIndex": 0, "line": 44,
+    "metrics": [
+      { "value": 6, "exceeded": false },
+      { "value": 8, "exceeded": false },
+      { "value": 42, "exceeded": true },
+    ]},
+  {
+    "assembly": "OreAka.WPF", "class": "OreAka.WPF.ApplicationService.WorkTaskService", "reportPath": "OreAka.WPF_WorkTaskService.htm", "methodName": "RegistWorkTaskAsync()", "methodShortName": "RegistWorkTaskAsync()", "fileIndex": 0, "line": 19,
     "metrics": [
       { "value": 4, "exceeded": false },
       { "value": 4, "exceeded": false },
       { "value": 20, "exceeded": true },
     ]},
   {
-    "assembly": "OreAka.WPF", "class": "OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister", "reportPath": "OreAka.WPF_HotKeyRegister.htm", "methodName": "System.Void OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister::ComponentDispatcher_ThreadPreprocessMessage(System.Windows.Interop.MSG&,System.Boolean&)", "methodShortName": "ComponentDispatcher_ThreadPreprocessMessage(...)", "fileIndex": 0, "line": 37,
+    "assembly": "OreAka.WPF", "class": "OreAka.WPF.ApplicationService.WorkTaskService", "reportPath": "OreAka.WPF_WorkTaskService.htm", "methodName": "GetWorkTaskHistoriesAsync()", "methodShortName": "GetWorkTaskHistoriesAsync()", "fileIndex": 0, "line": 34,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 4, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "OreAka.WPF", "class": "OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister", "reportPath": "OreAka.WPF_HotKeyRegister.htm", "methodName": "System.Void OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister::ComponentDispatcher_ThreadPreprocessMessage(System.Windows.Interop.MSG&,System.Boolean&)", "methodShortName": "ComponentDispatcher_ThreadPreprocessMessage(...)", "fileIndex": 0, "line": 44,
     "metrics": [
       { "value": 4, "exceeded": false },
       { "value": 8, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "OreAka.WPF", "class": "OreAka.WPF.Infrastructure.Repositories.WorkTaskRepository", "reportPath": "OreAka.WPF_WorkTaskRepository.htm", "methodName": "GetHistoriesAsync()", "methodShortName": "GetHistoriesAsync()", "fileIndex": 0, "line": 27,
+    "metrics": [
+      { "value": 4, "exceeded": false },
+      { "value": 4, "exceeded": false },
       { "value": 20, "exceeded": true },
     ]},
 ];

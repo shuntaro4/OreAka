@@ -117,6 +117,8 @@ namespace OreAka.WPF.Presentation.ViewModels
         {
             var preferencesWindow = new PreferencesWindow();
             preferencesWindow.ShowDialog();
+
+            MainWindow.CurrentWindow.RegistHotKey();
         }
 
         private void ShowAboutAction()

@@ -1,5 +1,7 @@
-﻿using OreAka.WPF.Domain;
+﻿using Moq;
+using OreAka.WPF.Domain;
 using OreAka.WPF.Infrastructure.Repositories;
+using OreAka.WPF.Infrastructure.RunRegister;
 using System.IO;
 using System.Windows.Input;
 using Xunit;
@@ -86,9 +88,13 @@ namespace OreAka.WPF.Test.Infrastructure.Repositories
                 File.Delete(path);
             }
 
+            var runRegisterMoq = new Mock<IRunRegister>();
+            runRegisterMoq.Setup(x => x.RegistKey(true));
+
             var target = new PreferencesRepository(path)
             {
-                JsonSerializer = jsonSerializer
+                JsonSerializer = jsonSerializer,
+                RunRegister = runRegisterMoq.Object
             };
             target.New();
 

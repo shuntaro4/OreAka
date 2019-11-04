@@ -13,7 +13,7 @@ namespace OreAka.WPF.Infrastructure.Repositories
         {
             var model = Preferences.GenerateDefault();
             var actual = target.Serialize(model);
-            Assert.Equal(@"{""Delimiter"":"","",""ShowHideShortcut"":{""Key"":18,""ModifierKeys"":6},""ThemeName"":""Dark.Steel"",""Version"":1}", actual);
+            Assert.Equal(@"{""AutoLaunch"":false,""Delimiter"":"","",""ShowHideShortcut"":{""Key"":18,""ModifierKeys"":6},""ThemeName"":""Dark.Steel"",""Version"":1}", actual);
         }
 
         [Fact(DisplayName = "正：objectに正しくデシリアライズできる")]
@@ -21,12 +21,14 @@ namespace OreAka.WPF.Infrastructure.Repositories
         public void DesirializeTrue1()
         {
             var expected = Preferences.GenerateDefault();
-            var json = @"{""Delimiter"":"","",""ShowHideShortcut"":{""Key"":18,""ModifierKeys"":6},""Version"":1}";
+            var json = @"{""AutoLaunch"":false,""Delimiter"":"","",""ShowHideShortcut"":{""Key"":18,""ModifierKeys"":6},""ThemeName"":""Dark.Steel"",""Version"":1}";
             var actual = target.Desirialize<Preferences>(json);
             Assert.Equal(expected.Version, actual.Version);
             Assert.Equal(expected.Delimiter, actual.Delimiter);
             Assert.Equal(expected.ShowHideShortcut.ModifierKeys, actual.ShowHideShortcut.ModifierKeys);
             Assert.Equal(expected.ShowHideShortcut.Key, actual.ShowHideShortcut.Key);
+            Assert.Equal(expected.ThemeName, actual.ThemeName);
+            Assert.Equal(expected.AutoLaunch, actual.AutoLaunch);
         }
     }
 }

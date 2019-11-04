@@ -14,19 +14,19 @@
 <col />
 </colgroup>
 <tbody>
-<tr><th>Generated on:</th><td>2019/10/04 - 22:21:44</td></tr>
+<tr><th>Generated on:</th><td>2019/11/02 - 23:10:21</td></tr>
 <tr><th>Parser:</th><td>OpenCoverParser</td></tr>
 <tr><th>Assemblies:</th><td>7</td></tr>
-<tr><th>Classes:</th><td>14</td></tr>
-<tr><th>Files:</th><td>16</td></tr>
-<tr><th>Covered lines:</th><td>111</td></tr>
-<tr><th>Uncovered lines:</th><td>114</td></tr>
-<tr><th>Coverable lines:</th><td>225</td></tr>
-<tr><th>Total lines:</th><td>592</td></tr>
-<tr><th>Line coverage:</th><td>49.3% (111 of 225)</td></tr>
-<tr><th>Covered branches:</th><td>12</td></tr>
-<tr><th>Total branches:</th><td>34</td></tr>
-<tr><th>Branch coverage:</th><td>35.2% (12 of 34)</td></tr>
+<tr><th>Classes:</th><td>17</td></tr>
+<tr><th>Files:</th><td>19</td></tr>
+<tr><th>Covered lines:</th><td>152</td></tr>
+<tr><th>Uncovered lines:</th><td>231</td></tr>
+<tr><th>Coverable lines:</th><td>383</td></tr>
+<tr><th>Total lines:</th><td>874</td></tr>
+<tr><th>Line coverage:</th><td>39.6% (152 of 383)</td></tr>
+<tr><th>Covered branches:</th><td>16</td></tr>
+<tr><th>Total branches:</th><td>68</td></tr>
+<tr><th>Branch coverage:</th><td>23.5% (16 of 68)</td></tr>
 </tbody>
 </table>
 <h1>Risk Hotspots</h1>
@@ -50,16 +50,37 @@
 <tbody>
 <tr>
 <td>OreAka.WPF</td>
+<td><a href="OreAka.WPF_AppThemeService.htm">OreAka.WPF.ApplicationService.AppThemeService</a></td>
+<td title="OreAka.WPF.Domain.AppTheme OreAka.WPF.ApplicationService.AppThemeService::GetCurrentTheme()"><a href="OreAka.WPF_AppThemeService.htm#file0_line44">GetCurrentTheme()</a></td><td class="lightgreen right">6</td>
+<td class="lightgreen right">8</td>
+<td class="lightred right">42</td>
+</tr>
+<tr>
+<td>OreAka.WPF</td>
 <td><a href="OreAka.WPF_WorkTaskService.htm">OreAka.WPF.ApplicationService.WorkTaskService</a></td>
-<td title="RegistWorkTaskAsync()"><a href="OreAka.WPF_WorkTaskService.htm#file0_line18">RegistWorkTaskAsync()</a></td><td class="lightgreen right">4</td>
+<td title="RegistWorkTaskAsync()"><a href="OreAka.WPF_WorkTaskService.htm#file0_line19">RegistWorkTaskAsync()</a></td><td class="lightgreen right">4</td>
+<td class="lightgreen right">4</td>
+<td class="lightred right">20</td>
+</tr>
+<tr>
+<td>OreAka.WPF</td>
+<td><a href="OreAka.WPF_WorkTaskService.htm">OreAka.WPF.ApplicationService.WorkTaskService</a></td>
+<td title="GetWorkTaskHistoriesAsync()"><a href="OreAka.WPF_WorkTaskService.htm#file0_line34">GetWorkTaskHistoriesAsync()</a></td><td class="lightgreen right">4</td>
 <td class="lightgreen right">4</td>
 <td class="lightred right">20</td>
 </tr>
 <tr>
 <td>OreAka.WPF</td>
 <td><a href="OreAka.WPF_HotKeyRegister.htm">OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister</a></td>
-<td title="System.Void OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister::ComponentDispatcher_ThreadPreprocessMessage(System.Windows.Interop.MSG&amp;,System.Boolean&amp;)"><a href="OreAka.WPF_HotKeyRegister.htm#file0_line37">ComponentDispatcher_ThreadPreprocessMessage(...)</a></td><td class="lightgreen right">4</td>
+<td title="System.Void OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister::ComponentDispatcher_ThreadPreprocessMessage(System.Windows.Interop.MSG&amp;,System.Boolean&amp;)"><a href="OreAka.WPF_HotKeyRegister.htm#file0_line44">ComponentDispatcher_ThreadPreprocessMessage(...)</a></td><td class="lightgreen right">4</td>
 <td class="lightgreen right">8</td>
+<td class="lightred right">20</td>
+</tr>
+<tr>
+<td>OreAka.WPF</td>
+<td><a href="OreAka.WPF_WorkTaskRepository.htm">OreAka.WPF.Infrastructure.Repositories.WorkTaskRepository</a></td>
+<td title="GetHistoriesAsync()"><a href="OreAka.WPF_WorkTaskRepository.htm#file0_line27">GetHistoriesAsync()</a></td><td class="lightgreen right">4</td>
+<td class="lightgreen right">4</td>
 <td class="lightred right">20</td>
 </tr>
 </tbody>
@@ -81,21 +102,24 @@
 </colgroup>
 <thead><tr><th>Name</th><th class="right">Covered</th><th class="right">Uncovered</th><th class="right">Coverable</th><th class="right">Total</th><th class="center" colspan="2">Line coverage</th><th class="center" colspan="2">Branch coverage</th></tr></thead>
 <tbody>
-<tr><th>OreAka.WPF</th><th class="right">111</th><th class="right">114</th><th class="right">225</th><th class="right">592</th><th title="LineCoverage" class="right">49.3%</th><th><table class="coverage"><tr><td class="green covered49">&nbsp;</td><td class="red covered51">&nbsp;</td></tr></table></th><th class="right">35.2%</th><th><table class="coverage"><tr><td class="green covered35">&nbsp;</td><td class="red covered65">&nbsp;</td></tr></table></th></tr>
-<tr><td><a href="OreAka.WPF_App.htm">OreAka.WPF.App</a></td><td class="right">0</td><td class="right">18</td><td class="right">18</td><td class="right">134</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><th>OreAka.WPF</th><th class="right">152</th><th class="right">231</th><th class="right">383</th><th class="right">874</th><th title="LineCoverage" class="right">39.6%</th><th><table class="coverage"><tr><td class="green covered40">&nbsp;</td><td class="red covered60">&nbsp;</td></tr></table></th><th class="right">23.5%</th><th><table class="coverage"><tr><td class="green covered24">&nbsp;</td><td class="red covered76">&nbsp;</td></tr></table></th></tr>
+<tr><td><a href="OreAka.WPF_App.htm">OreAka.WPF.App</a></td><td class="right">0</td><td class="right">39</td><td class="right">39</td><td class="right">172</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="OreAka.WPF_AppThemeService.htm">OreAka.WPF.ApplicationService.AppThemeService</a></td><td class="right">0</td><td class="right">27</td><td class="right">27</td><td class="right">49</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
 <tr><td><a href="OreAka.WPF_LogService.htm">OreAka.WPF.ApplicationService.LogService</a></td><td class="right">0</td><td class="right">7</td><td class="right">7</td><td class="right">20</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
-<tr><td><a href="OreAka.WPF_PreferencesService.htm">OreAka.WPF.ApplicationService.PreferencesService</a></td><td class="right">0</td><td class="right">18</td><td class="right">18</td><td class="right">41</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
-<tr><td><a href="OreAka.WPF_WorkTaskService.htm">OreAka.WPF.ApplicationService.WorkTaskService</a></td><td class="right">0</td><td class="right">10</td><td class="right">10</td><td class="right">31</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="OreAka.WPF_PreferencesService.htm">OreAka.WPF.ApplicationService.PreferencesService</a></td><td class="right">0</td><td class="right">27</td><td class="right">27</td><td class="right">54</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="OreAka.WPF_WorkTaskService.htm">OreAka.WPF.ApplicationService.WorkTaskService</a></td><td class="right">0</td><td class="right">18</td><td class="right">18</td><td class="right">46</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
 <tr><td><a href="OreAka.WPF_AppFolder.htm">OreAka.WPF.Domain.AppFolder</a></td><td class="right">11</td><td class="right">0</td><td class="right">11</td><td class="right">25</td><td title="LineCoverage" class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td><td class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="OreAka.WPF_AppTheme.htm">OreAka.WPF.Domain.AppTheme</a></td><td class="right">21</td><td class="right">0</td><td class="right">21</td><td class="right">40</td><td title="LineCoverage" class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
 <tr><td><a href="OreAka.WPF_GlobalShortcut.htm">OreAka.WPF.Domain.GlobalShortcut</a></td><td class="right">7</td><td class="right">0</td><td class="right">7</td><td class="right">21</td><td title="LineCoverage" class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
-<tr><td><a href="OreAka.WPF_Preferences.htm">OreAka.WPF.Domain.Preferences</a></td><td class="right">14</td><td class="right">0</td><td class="right">14</td><td class="right">33</td><td title="LineCoverage" class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="OreAka.WPF_Preferences.htm">OreAka.WPF.Domain.Preferences</a></td><td class="right">22</td><td class="right">0</td><td class="right">22</td><td class="right">45</td><td title="LineCoverage" class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
 <tr><td><a href="OreAka.WPF_TypeParse.htm">OreAka.WPF.Domain.TypeParse</a></td><td class="right">6</td><td class="right">0</td><td class="right">6</td><td class="right">14</td><td title="LineCoverage" class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td><td class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td></tr>
-<tr><td><a href="OreAka.WPF_WorkTask.htm">OreAka.WPF.Domain.WorkTask</a></td><td class="right">23</td><td class="right">1</td><td class="right">24</td><td class="right">42</td><td title="LineCoverage" class="right">95.8%</td><td><table class="coverage"><tr><td class="green covered96">&nbsp;</td><td class="red covered4">&nbsp;</td></tr></table></td><td class="right">87.5%</td><td><table class="coverage"><tr><td class="green covered88">&nbsp;</td><td class="red covered12">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="OreAka.WPF_WorkTask.htm">OreAka.WPF.Domain.WorkTask</a></td><td class="right">33</td><td class="right">1</td><td class="right">34</td><td class="right">58</td><td title="LineCoverage" class="right">97%</td><td><table class="coverage"><tr><td class="green covered97">&nbsp;</td><td class="red covered3">&nbsp;</td></tr></table></td><td class="right">91.6%</td><td><table class="coverage"><tr><td class="green covered92">&nbsp;</td><td class="red covered8">&nbsp;</td></tr></table></td></tr>
 <tr><td><a href="OreAka.WPF_HotKeyItem.htm">OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyItem</a></td><td class="right">0</td><td class="right">9</td><td class="right">9</td><td class="right">21</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
-<tr><td><a href="OreAka.WPF_HotKeyRegister.htm">OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister</a></td><td class="right">0</td><td class="right">47</td><td class="right">47</td><td class="right">99</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="OreAka.WPF_HotKeyRegister.htm">OreAka.WPF.Infrastructure.HotKeyRegister.HotKeyRegister</a></td><td class="right">0</td><td class="right">60</td><td class="right">60</td><td class="right">123</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
 <tr><td><a href="OreAka.WPF_JsonSerializer.htm">OreAka.WPF.Infrastructure.Repositories.JsonSerializer</a></td><td class="right">13</td><td class="right">0</td><td class="right">13</td><td class="right">28</td><td title="LineCoverage" class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
-<tr><td><a href="OreAka.WPF_PreferencesRepository.htm">OreAka.WPF.Infrastructure.Repositories.PreferencesRepository</a></td><td class="right">30</td><td class="right">4</td><td class="right">34</td><td class="right">60</td><td title="LineCoverage" class="right">88.2%</td><td><table class="coverage"><tr><td class="green covered88">&nbsp;</td><td class="red covered12">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
-<tr><td><a href="OreAka.WPF_WorkTaskRepository.htm">OreAka.WPF.Infrastructure.Repositories.WorkTaskRepository</a></td><td class="right">7</td><td class="right">0</td><td class="right">7</td><td class="right">23</td><td title="LineCoverage" class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td><td class="right">50%</td><td><table class="coverage"><tr><td class="green covered50">&nbsp;</td><td class="red covered50">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="OreAka.WPF_PreferencesRepository.htm">OreAka.WPF.Infrastructure.Repositories.PreferencesRepository</a></td><td class="right">32</td><td class="right">4</td><td class="right">36</td><td class="right">68</td><td title="LineCoverage" class="right">88.8%</td><td><table class="coverage"><tr><td class="green covered89">&nbsp;</td><td class="red covered11">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="OreAka.WPF_WorkTaskRepository.htm">OreAka.WPF.Infrastructure.Repositories.WorkTaskRepository</a></td><td class="right">7</td><td class="right">13</td><td class="right">20</td><td class="right">42</td><td title="LineCoverage" class="right">35%</td><td><table class="coverage"><tr><td class="green covered35">&nbsp;</td><td class="red covered65">&nbsp;</td></tr></table></td><td class="right">12.5%</td><td><table class="coverage"><tr><td class="green covered12">&nbsp;</td><td class="red covered88">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="OreAka.WPF_RunRegister.htm">OreAka.WPF.Infrastructure.RunRegister.RunRegister</a></td><td class="right">0</td><td class="right">26</td><td class="right">26</td><td class="right">48</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
 <tr><th>xunit.assert</th><th class="right">0</th><th class="right">0</th><th class="right">0</th><th class="right">0</th><th title="" class="right"></th><th><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></th><th class="right"></th><th><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></th></tr>
 <tr><th>xunit.core</th><th class="right">0</th><th class="right">0</th><th class="right">0</th><th class="right">0</th><th title="" class="right"></th><th><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></th><th class="right"></th><th><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></th></tr>
 <tr><th>xunit.execution.dotnet</th><th class="right">0</th><th class="right">0</th><th class="right">0</th><th class="right">0</th><th title="" class="right"></th><th><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></th><th class="right"></th><th><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></th></tr>
@@ -105,6 +129,6 @@
 </tbody>
 </table>
 </coverage-info>
-<div class="footer">Generated by: ReportGenerator 4.3.0.0<br />2019/10/04 - 22:21:44<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div></div>
+<div class="footer">Generated by: ReportGenerator 4.3.0.0<br />2019/11/02 - 23:10:21<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div></div>
 <script type="text/javascript" src="main.js"></script>
 </body></html>
