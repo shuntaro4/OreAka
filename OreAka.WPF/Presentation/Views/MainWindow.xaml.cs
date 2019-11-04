@@ -53,7 +53,7 @@ namespace OreAka.WPF.Presentation.Views
             AnswerText.Focus();
         }
 
-        private void RegistHotKey()
+        public void RegistHotKey()
         {
             HotKeyRegister.UnRegistAllKeys();
 

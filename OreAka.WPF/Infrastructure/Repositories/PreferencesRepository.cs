@@ -61,8 +61,6 @@ namespace OreAka.WPF.Infrastructure.Repositories
             }
 
             RunRegister.RegistKey(preferences.AutoLaunch);
-
-            // todo update hotkey settings... :(
         }
     }
 }
