@@ -77,23 +77,6 @@ namespace OreAka.WPF.Infrastructure.HotKeyRegister
             return false;
         }
 
-        public bool UpdateFirstKey(ModifierKeys modifierKeys, Key key)
-        {
-            // todo :(
-
-            if (hotKeys.Count < 1)
-            {
-                return false;
-            }
-            var hotKey = hotKeys.FirstOrDefault();
-
-            UnRegistKeyById(hotKey.Key);
-
-            RegistKey(modifierKeys, key, hotKey.Value.EventHandler);
-
-            return true;
-        }
-
         public bool UnRegistKeyById(int id)
         {
             var result = UnregisterHotKey(hWnd, id);

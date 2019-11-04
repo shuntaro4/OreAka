@@ -7,8 +7,6 @@ namespace OreAka.WPF.Infrastructure.HotKeyRegister
     {
         bool RegistKey(ModifierKeys modifierKeys, Key key, EventHandler eventHandler);
 
-        bool UpdateFirstKey(ModifierKeys modifierKeys, Key key);
-
         bool UnRegistAllKeys();
     }
 }
