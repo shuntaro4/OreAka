@@ -5,7 +5,7 @@
     <UseWPF>true</UseWPF>
     <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
     <PublishSingleFile>true</PublishSingleFile>
-    <AssemblyName>OreAka.WPF</AssemblyName>
+    <AssemblyName>OreAka</AssemblyName>
     <DebugType>full</DebugType>
     <Version>0.0.6</Version>
     <PackageId>OreAka</PackageId>
